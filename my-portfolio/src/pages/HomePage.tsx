@@ -1,11 +1,12 @@
-import { Navbar } from "../components/Navbar";
-import { Text } from "../components/Banner";
+import { Header } from "../components/Header";
+import { Main } from "../components/Main";
 
 export const HomePage = () => {
   return (
-    <div>
-      <Navbar />
-      <Text />
+    <div className="bg-olive flex flex-col h-full">
+      <Header />
+      <Main />
+      <div className="h-10 w-full flex-none sticky"></div>
     </div>
   );
 };
