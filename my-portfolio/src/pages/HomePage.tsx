@@ -1,9 +1,11 @@
-import { Sidebar } from "../components/Sidebar";
+import { Navbar } from "../components/Navbar";
+import { Text } from "../components/Banner";
 
 export const HomePage = () => {
   return (
-    <div className="flex">
-      <Sidebar />
+    <div>
+      <Navbar />
+      <Text />
     </div>
   );
 };
