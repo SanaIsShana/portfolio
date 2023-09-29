@@ -6,6 +6,7 @@ export default {
       colors: {
         olive: "#a3b899",
         lightGreen: "#dde6d5",
+        dustyPink: "#fceee9",
       },
       fontFamily: {
         h1: ["Marcellus", "serif"],

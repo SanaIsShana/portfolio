@@ -1,12 +1,13 @@
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 
 export const HomePage = () => {
   return (
-    <div className="bg-olive flex flex-col h-full">
+    <div className="bg-dustyPink h-screen p-5">
       <Header />
       <Main />
-      <div className="h-10 w-full flex-none sticky"></div>
+      <Footer />
     </div>
   );
 };
