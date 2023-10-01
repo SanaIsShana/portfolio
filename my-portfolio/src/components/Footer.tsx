@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <div
       className={`absolute bottom-10 w-full flex flex-row justify-center space-x-2 ${
-        theme === "dark" ? "dark:text-dustyPink" : "text-black"
+        theme === "dark" ? "text-dustyPink" : "text-black"
       }`}
     >
       <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>

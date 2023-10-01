@@ -11,7 +11,7 @@ export const HomePage = () => {
     <main role="main" className="w-full flex flex-col h-screen">
       <div
         className={`${
-          theme === "dark" ? "dark:bg-black" : "bg-dustyPink"
+          theme === "dark" ? "bg-black" : "bg-dustyPink"
         } p-5 h-full`}
       >
         <Header />

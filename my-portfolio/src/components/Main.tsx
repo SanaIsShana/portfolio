@@ -1,19 +1,16 @@
 import { motion, Variants } from "framer-motion";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../public/css/mask.css";
 import { PageTransition } from "../utils/PageTransition";
 import { ThemeContext } from "../utils/theme-context";
+import { useMousePosition } from "../utils/useMousePosition";
 
 export const Main = () => {
   const { theme } = useContext(ThemeContext);
-
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
-
   const [cursorVariant, setCursorVariant] = useState("default");
+  const ref = useRef(null);
+  const mousePosition = useMousePosition(ref);
 
   const variants: Variants = {
     default: {
@@ -33,26 +30,9 @@ export const Main = () => {
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
 
-  useEffect(() => {
-    const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
   return (
     <div
-      className={`static ${
-        theme === "dark" ? "dark:text-dustyPink" : "text-black"
-      }`}
+      className={`static ${theme === "dark" ? "text-dustyPink" : "text-black"}`}
     >
       <div className="absolute inline-block top-24 left-4">
         <div className="flex flex-col font-check text-6xl sm:text-8xl align-start">
@@ -82,6 +62,7 @@ export const Main = () => {
         </div>
       </div>
       <motion.div
+        ref={ref}
         className="cursor"
         variants={variants}
         animate={cursorVariant}
