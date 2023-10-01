@@ -1,6 +1,7 @@
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa"
-import { motion } from "framer-motion"
 import { useContext } from "react"
+import { motion } from "framer-motion"
+
 import { ThemeContext } from "../utils/theme-context"
 
 export const Footer = () => {

@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs"
 import { motion } from "framer-motion"
+
 import { ThemeContext } from "../utils/theme-context"
 
 export const Header = () => {

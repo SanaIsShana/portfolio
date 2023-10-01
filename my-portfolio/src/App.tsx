@@ -1,7 +1,8 @@
+import { useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+
 import { HomePage } from "./pages/HomePage"
 import { About } from "./pages/About"
-import { useState } from "react"
 import { ThemeContext } from "./utils/theme-context"
 
 export const App = () => {
