@@ -2,7 +2,6 @@ import { useContext, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion, Variants } from "framer-motion"
 
-import "../../public/css/mask.css"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { ThemeContext } from "../utils/theme-context"
@@ -75,7 +74,7 @@ export const HomePage = () => {
           </div>
           <motion.div
             ref={ref}
-            className="cursor"
+            className="bg-olive h-12px w-12px rounded-full fixed top-0 left-0 pointer-events-none"
             variants={variants}
             animate={cursorVariant}
           />

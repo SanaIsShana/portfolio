@@ -15,7 +15,7 @@ export const About = () => {
         } p-5 h-full`}
       >
         <Header />
-
+        <div className="border-spacing"></div>
         <Footer />
       </div>
       <PageTransition />
