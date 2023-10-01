@@ -9,7 +9,7 @@ export default {
         dustyPink: "#fceee9",
       },
       fontFamily: {
-        h1: ["Marcellus", "serif"],
+        check: ["Calistoga", "cursive"],
       },
     },
   },
