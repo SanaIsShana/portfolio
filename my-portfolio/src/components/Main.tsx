@@ -1,16 +1,16 @@
-import { motion, Variants } from "framer-motion";
-import { useContext, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import "../../public/css/mask.css";
-import { PageTransition } from "../utils/PageTransition";
-import { ThemeContext } from "../utils/theme-context";
-import { useMousePosition } from "../utils/useMousePosition";
+import { motion, Variants } from "framer-motion"
+import { useContext, useRef, useState } from "react"
+import { Link } from "react-router-dom"
+import "../../public/css/mask.css"
+import { PageTransition } from "../utils/PageTransition"
+import { ThemeContext } from "../utils/theme-context"
+import { useMousePosition } from "../utils/useMousePosition"
 
 export const Main = () => {
-  const { theme } = useContext(ThemeContext);
-  const [cursorVariant, setCursorVariant] = useState("default");
-  const ref = useRef(null);
-  const mousePosition = useMousePosition(ref);
+  const { theme } = useContext(ThemeContext)
+  const [cursorVariant, setCursorVariant] = useState("default")
+  const ref = useRef(null)
+  const mousePosition = useMousePosition(ref)
 
   const variants: Variants = {
     default: {
@@ -25,10 +25,10 @@ export const Main = () => {
       backgroundColor: "#a3b899",
       mixBlendMode: "difference",
     },
-  };
+  }
 
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
+  const textEnter = () => setCursorVariant("text")
+  const textLeave = () => setCursorVariant("default")
 
   return (
     <div
@@ -69,5 +69,5 @@ export const Main = () => {
       />
       <PageTransition />
     </div>
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-import { PageTransition } from "../utils/PageTransition";
+import { PageTransition } from "../utils/PageTransition"
 
 export const About = () => {
   return (
@@ -6,5 +6,5 @@ export const About = () => {
       <div className="flex">About...</div>
       <PageTransition />
     </>
-  );
-};
+  )
+}

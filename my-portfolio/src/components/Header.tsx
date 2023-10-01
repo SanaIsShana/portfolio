@@ -1,16 +1,16 @@
-import { useContext } from "react";
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { ThemeContext } from "../utils/theme-context";
+import { useContext } from "react"
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs"
+import { motion } from "framer-motion"
+import { ThemeContext } from "../utils/theme-context"
 
 export const Header = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext)
 
   const handleThemeChange = () => {
-    const isCurrentDark = theme === "dark";
-    setTheme(isCurrentDark ? "light" : "dark");
-    localStorage.setItem("theme", isCurrentDark ? "light" : "dark");
-  };
+    const isCurrentDark = theme === "dark"
+    setTheme(isCurrentDark ? "light" : "dark")
+    localStorage.setItem("theme", isCurrentDark ? "light" : "dark")
+  }
 
   return (
     <div
@@ -34,5 +34,5 @@ export const Header = () => {
         </motion.div>
       )}
     </div>
-  );
-};
+  )
+}

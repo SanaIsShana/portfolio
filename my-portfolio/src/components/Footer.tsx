@@ -1,10 +1,10 @@
-import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { useContext } from "react";
-import { ThemeContext } from "../utils/theme-context";
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa"
+import { motion } from "framer-motion"
+import { useContext } from "react"
+import { ThemeContext } from "../utils/theme-context"
 
 export const Footer = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext)
   return (
     <div
       className={`absolute bottom-10 w-full flex flex-row justify-center space-x-2 ${
@@ -18,5 +18,5 @@ export const Footer = () => {
         <FaGithubSquare size={30} className="cursor-pointer" />
       </motion.div>
     </div>
-  );
-};
+  )
+}
