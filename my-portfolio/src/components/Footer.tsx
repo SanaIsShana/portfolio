@@ -3,6 +3,7 @@ import { useContext } from "react"
 import { motion } from "framer-motion"
 
 import { ThemeContext } from "../utils/theme-context"
+import { Link } from "react-router-dom"
 
 export const Footer = () => {
   const { theme } = useContext(ThemeContext)
@@ -13,10 +14,17 @@ export const Footer = () => {
       }`}
     >
       <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
-        <FaLinkedin size={30} className="cursor-pointer" />
+        <Link
+          to={{ pathname: "//www.linkedin.com/in/shana-shana" }}
+          target="_blank"
+        >
+          <FaLinkedin size={30} className="cursor-pointer" />
+        </Link>
       </motion.div>
       <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
-        <FaGithubSquare size={30} className="cursor-pointer" />
+        <Link to={{ pathname: "//github.com/SanaIsShana" }} target="_blank">
+          <FaGithubSquare size={30} className="cursor-pointer" />
+        </Link>
       </motion.div>
     </div>
   )

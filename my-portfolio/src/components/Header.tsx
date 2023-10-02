@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import LogoLight from "../../public/assets/Logo-light.svg"
 import LogoDark from "../../public/assets/Logo-dark.svg"
 import { ThemeContext } from "../utils/theme-context"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -22,7 +23,7 @@ export const Header = () => {
           theme === "dark" ? "text-dustyPink" : "text-black"
         }`}
       >
-        <div className="flex flex-col">
+        <button className="flex flex-col">
           <motion.div
             whileHover={{
               scale: [1, 2, 2, 1, 1],
@@ -33,19 +34,22 @@ export const Header = () => {
               rotate: [0, 0, 50, 50, 0],
             }}
           >
-            {theme === "dark" ? (
-              <img src={LogoDark} />
-            ) : (
-              <img src={LogoLight} />
-            )}
+            <Link to="/">
+              {theme === "dark" ? (
+                <img src={LogoDark} />
+              ) : (
+                <img src={LogoLight} />
+              )}
+            </Link>
           </motion.div>
-        </div>
+        </button>
         <div className="flex flex-col justify-center">
           {theme === "dark" ? (
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
               <BsFillMoonFill
                 className="cursor-pointer"
                 onClick={handleThemeChange}
+                size={25}
               />
             </motion.div>
           ) : (
@@ -53,6 +57,7 @@ export const Header = () => {
               <BsFillSunFill
                 className="cursor-pointer"
                 onClick={handleThemeChange}
+                size={25}
               />
             </motion.div>
           )}
