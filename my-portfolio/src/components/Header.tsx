@@ -2,7 +2,8 @@ import { useContext } from "react"
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs"
 import { motion } from "framer-motion"
 
-import logo from "../../public/assets/drawing.svg"
+import LogoLight from "../../public/assets/Logo-light.svg"
+import LogoDark from "../../public/assets/Logo-dark.svg"
 import { ThemeContext } from "../utils/theme-context"
 
 export const Header = () => {
@@ -16,29 +17,46 @@ export const Header = () => {
 
   return (
     <>
-      <div>
-        <img src={logo} />
-      </div>
       <div
-        className={`h-10 w-full flex flex-row justify-end space-x-3 p-3 sticky ${
+        className={`h-30 w-full flex flex-row justify-between space-x-3 p-3 sticky ${
           theme === "dark" ? "text-dustyPink" : "text-black"
         }`}
       >
-        {theme === "light" ? (
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
-            <BsFillMoonFill
-              className="cursor-pointer"
-              onClick={handleThemeChange}
-            />
+        <div className="flex flex-col">
+          <motion.div
+            whileHover={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 50, 50, 0],
+            }}
+            whileTap={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 50, 50, 0],
+            }}
+          >
+            {theme === "dark" ? (
+              <img src={LogoDark} />
+            ) : (
+              <img src={LogoLight} />
+            )}
           </motion.div>
-        ) : (
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
-            <BsFillSunFill
-              className="cursor-pointer"
-              onClick={handleThemeChange}
-            />
-          </motion.div>
-        )}
+        </div>
+        <div className="flex flex-col justify-center">
+          {theme === "dark" ? (
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
+              <BsFillMoonFill
+                className="cursor-pointer"
+                onClick={handleThemeChange}
+              />
+            </motion.div>
+          ) : (
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
+              <BsFillSunFill
+                className="cursor-pointer"
+                onClick={handleThemeChange}
+              />
+            </motion.div>
+          )}
+        </div>
       </div>
     </>
   )
