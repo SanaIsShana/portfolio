@@ -9,7 +9,7 @@ export const Footer = () => {
   const { theme } = useContext(ThemeContext)
   return (
     <div
-      className={`absolute bottom-10 w-full flex flex-row justify-center space-x-2 ${
+      className={`bottom-10 w-full flex flex-row justify-center space-x-2 ${
         theme === "dark" ? "text-dustyPink" : "text-black"
       }`}
     >

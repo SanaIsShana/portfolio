@@ -33,55 +33,58 @@ export const HomePage = () => {
   const textLeave = () => setCursorVariant("default")
 
   return (
-    <main role="main" className="w-full flex flex-col h-screen">
+    <div role="main" className="flex flex-col fixed w-screen h-screen">
       <div
         className={`${
           theme === "dark" ? "bg-black" : "bg-dustyPink"
         } p-5 h-full`}
       >
         <Header />
-        <div
-          className={`static ${
-            theme === "dark" ? "text-dustyPink" : "text-black"
-          }`}
-        >
-          <div className="absolute inline-block top-24 left-4">
-            <div className="flex flex-col font-check text-6xl sm:text-8xl align-start">
-              <p
-                className="font-check"
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
-              >
-                Sana Barilade
-              </p>
+        <div className="flex border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-check flex-col h-3/4">
+          <div
+            className={`static ${
+              theme === "dark" ? "text-dustyPink" : "text-black"
+            } relative h-full`}
+          >
+            <div className="p-2 sm:p-10">
+              <div className="flex flex-col font-check text-6xl sm:text-8xl align-start w-fit">
+                <p
+                  className="font-check"
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                >
+                  Sana Barilade
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="absolute inline-block bottom-32 right-4">
-            <div className="flex flex-col font-check text-4xl sm:text-6xl align-end">
-              <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                <Link to="/About">
-                  About
-                  <motion.div />
-                </Link>
-              </button>
-              <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                Projects
-              </button>
-              <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                Contact
-              </button>
+
+            <div className="absolute bottom-0 right-0 p-2 sm:p-10">
+              <div className="flex flex-col font-check text-4xl sm:text-6xl ">
+                <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                  <Link to="/About">
+                    About
+                    <motion.div />
+                  </Link>
+                </button>
+                <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                  Projects
+                </button>
+                <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                  Contact
+                </button>
+              </div>
             </div>
+            <motion.div
+              ref={ref}
+              className="bg-olive h-12px w-12px rounded-full fixed top-0 left-0 pointer-events-none"
+              variants={variants}
+              animate={cursorVariant}
+            />
           </div>
-          <motion.div
-            ref={ref}
-            className="bg-olive h-12px w-12px rounded-full fixed top-0 left-0 pointer-events-none"
-            variants={variants}
-            animate={cursorVariant}
-          />
         </div>
         <Footer />
       </div>
       <PageTransition />
-    </main>
+    </div>
   )
 }

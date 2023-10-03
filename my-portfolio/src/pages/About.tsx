@@ -1,42 +1,58 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { PageTransition } from "../utils/PageTransition"
 import { ThemeContext } from "../utils/theme-context"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
-import Resume from "../../public/assets/Shana-CV.pdf"
-import { AiFillSmile } from "react-icons/ai"
+import { AnimatePresence, motion } from "framer-motion"
+import { ResumeTab } from "../components/ResumeTab"
+import { WorkExperienceTab } from "../components/WorkExperienceTab"
+import { Technologies } from "../components/TechonologiesTab"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
+  const [selectedTab, setSelectedTab] = useState("CV")
 
-  const onResumeClick = () => {
-    window.open(Resume)
-  }
+  const tabs = ["CV", "Experience", "Core technologies"]
 
   return (
-    <main role="main" className="w-full flex flex-col h-screen">
+    <div role="main" className="flex flex-col fixed w-screen h-screen">
       <div
         className={`${
           theme === "dark" ? "bg-black" : "bg-dustyPink"
         } p-5 h-full`}
       >
         <Header />
-        <div className="flex border-solid border-4 rounded-lg border-black justify-center m-6 sm:m-20">
-          <div className="p-2 sm:p-5 m-5">
-            My name is Shana and I recently got my degree in full-stack
-            development from Teknikhögskolan in Lund, Sweden. I am seeking a new
-            challange!
-            <div className="flex w-fit cursor-pointer items-center mt-2 border-dotted border-2 rounded-lg border-olive p-1 gap-1.5">
-              <span> Check my resume!</span>
-              <span className="">
-                <AiFillSmile onClick={onResumeClick} size={30} />
-              </span>
-            </div>
-          </div>
+        <div className="flex border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-check flex-col h-4/6 ">
+          <nav className="flex w-full p-1 sm:p-3">
+            <ul className="flex justify-between w-1/3">
+              {tabs.map((item) => (
+                <li
+                  key={item}
+                  className={`${
+                    item === selectedTab ? "selected" : ""
+                  } cursor-pointer`}
+                  onClick={() => setSelectedTab(item)}
+                >
+                  {`${item}`}
+                  {item === selectedTab ? (
+                    <motion.div className="underline" layoutId="underline" />
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {selectedTab === "CV" ? (
+            <ResumeTab />
+          ) : selectedTab === "Experience" ? (
+            <WorkExperienceTab />
+          ) : (
+            <Technologies />
+          )}
         </div>
         <Footer />
       </div>
       <PageTransition />
-    </main>
+    </div>
   )
 }
