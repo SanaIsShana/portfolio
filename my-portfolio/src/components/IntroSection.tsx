@@ -8,8 +8,14 @@ export const Intro = () => {
       <div className="text-sm sm:text-lg">
         <p>
           My name is Sana. I am a full-stack developer. I recently got my degree
-          in full-stack development at Teknikhögskolan in Lund, Sweden. When I'm
-          not
+          in full-stack development at Teknikhögskolan in Lund, Sweden. I love
+          programming because I like to solve problems and be creative.
+        </p>
+      </div>
+
+      <div className="text-sm sm:text-lg mt-4">
+        <p>
+          When I'm not
           {!isHover && (
             <span
               className="text-darkOlive cursor-pointer w-67 inline-block ml-1"
@@ -27,7 +33,7 @@ export const Intro = () => {
             </span>
           )}
           , I like to hang out with my friends, learn to cook different kinds of
-          food, and play board games! I am seeking a new challenge!
+          food, and play board games!
         </p>
       </div>
     </div>

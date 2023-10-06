@@ -19,7 +19,7 @@ export const About = () => {
         } p-5 h-full`}
       >
         <Header />
-        <div className="flex flex-col border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-header h-4/6 overflow-x-auto">
+        <div className="flex flex-col border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-header h-4/6">
           <nav className="flex p-1 sticky top-0 w-full pl-5 pt-5">
             <ul className="flex justify-start space-x-2">
               {tabs.map((item) => (
@@ -30,8 +30,8 @@ export const About = () => {
             </ul>
           </nav>
 
-          <div className="h-full">
-            <section id="intro" className="flex h-full mt-5 justify-center">
+          <div className="overflow-x-auto">
+            <section id="intro" className="flex h-full justify-center">
               <Intro />
             </section>
             <section id="experience" className="flex h-full justify-center">

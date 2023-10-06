@@ -19,14 +19,16 @@ export const Experience = () => {
         </div>
       ))}
 
-      <div
-        className="flex w-fit cursor-pointer items-center border-dotted border-2 border-olive gap-2 p-2"
-        onClick={onResumeClick}
-      >
-        <span> Check my full resume!</span>
-        <span>
-          <AiFillSmile size={30} />
-        </span>
+      <div className="flex justify-end">
+        <button
+          className="flex w-fit cursor-pointer items-center bg-olive gap-1 p-1 rounded-lg mt-3"
+          onClick={onResumeClick}
+        >
+          <span> Check my full resume!</span>
+          <span>
+            <AiFillSmile size={30} />
+          </span>
+        </button>
       </div>
     </div>
   )
