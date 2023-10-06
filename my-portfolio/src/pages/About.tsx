@@ -1,18 +1,15 @@
-import { useContext, useState } from "react"
-import { PageTransition } from "../utils/PageTransition"
+import { useContext } from "react"
+import { PageTransition } from "../components/PageTransition"
 import { ThemeContext } from "../utils/theme-context"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
-import { AnimatePresence, motion } from "framer-motion"
-import { ResumeTab } from "../components/ResumeTab"
-import { WorkExperienceTab } from "../components/WorkExperienceTab"
-import { Technologies } from "../components/TechonologiesTab"
+import { Intro } from "../components/IntroSection"
+import { Experience } from "../components/ExperienceSection"
+import { tabs } from "../utils/info"
+import { HashLink } from "react-router-hash-link"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
-  const [selectedTab, setSelectedTab] = useState("CV")
-
-  const tabs = ["CV", "Experience", "Core technologies"]
 
   return (
     <div role="main" className="flex flex-col fixed w-screen h-screen">
@@ -22,33 +19,25 @@ export const About = () => {
         } p-5 h-full`}
       >
         <Header />
-        <div className="flex border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-check flex-col h-4/6 ">
-          <nav className="flex w-full p-1 sm:p-3">
-            <ul className="flex justify-between w-1/3">
+        <div className="flex flex-col border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-header h-4/6 overflow-x-auto">
+          <nav className="flex p-1 sticky top-0 w-full pl-5 pt-5">
+            <ul className="flex justify-start space-x-2">
               {tabs.map((item) => (
-                <li
-                  key={item}
-                  className={`${
-                    item === selectedTab ? "selected" : ""
-                  } cursor-pointer`}
-                  onClick={() => setSelectedTab(item)}
-                >
-                  {`${item}`}
-                  {item === selectedTab ? (
-                    <motion.div className="underline" layoutId="underline" />
-                  ) : null}
-                </li>
+                <HashLink smooth to={`#${item}`}>
+                  {`${item.toLocaleUpperCase()}`}
+                </HashLink>
               ))}
             </ul>
           </nav>
 
-          {selectedTab === "CV" ? (
-            <ResumeTab />
-          ) : selectedTab === "Experience" ? (
-            <WorkExperienceTab />
-          ) : (
-            <Technologies />
-          )}
+          <div className="h-full">
+            <section id="intro" className="flex h-full mt-5 justify-center">
+              <Intro />
+            </section>
+            <section id="experience" className="flex h-full justify-center">
+              <Experience />
+            </section>
+          </div>
         </div>
         <Footer />
       </div>

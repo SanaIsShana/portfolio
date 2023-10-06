@@ -5,7 +5,7 @@ import { motion, Variants } from "framer-motion"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { ThemeContext } from "../utils/theme-context"
-import { PageTransition } from "../utils/PageTransition"
+import { PageTransition } from "../components/PageTransition"
 import { useMousePosition } from "../utils/useMousePosition"
 
 export const HomePage = () => {
@@ -40,16 +40,16 @@ export const HomePage = () => {
         } p-5 h-full`}
       >
         <Header />
-        <div className="flex border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-check flex-col h-3/4">
+        <div className="flex border-solid border-4 rounded-lg border-black m-3 sm:m-7 font-header flex-col h-3/4">
           <div
             className={`static ${
               theme === "dark" ? "text-dustyPink" : "text-black"
             } relative h-full`}
           >
             <div className="p-2 sm:p-10">
-              <div className="flex flex-col font-check text-6xl sm:text-8xl align-start w-fit">
+              <div className="flex flex-col font-header text-6xl sm:text-8xl align-start w-fit">
                 <p
-                  className="font-check"
+                  className="font-header"
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
                 >
@@ -59,9 +59,9 @@ export const HomePage = () => {
             </div>
 
             <div className="absolute bottom-0 right-0 p-2 sm:p-10">
-              <div className="flex flex-col font-check text-4xl sm:text-6xl ">
+              <div className="flex flex-col font-header text-4xl sm:text-6xl ">
                 <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                  <Link to="/About">
+                  <Link to="/about">
                     About
                     <motion.div />
                   </Link>

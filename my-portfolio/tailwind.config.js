@@ -5,13 +5,18 @@ export default {
     extend: {
       colors: {
         olive: "#a3b899",
+        darkOlive: "#667b68",
         lightGreen: "#dde6d5",
         dustyPink: "#fceee9",
       },
       fontFamily: {
-        check: ["Calistoga", "cursive"],
+        header: ["Calistoga", "cursive"],
+        body: ["Roboto", "sans-serif"],
+      },
+      spacing: {
+        67: "58px",
       },
     },
   },
   plugins: [],
-};
+}

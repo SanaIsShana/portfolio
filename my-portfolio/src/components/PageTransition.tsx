@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 import { useContext } from "react"
-import { ThemeContext } from "./theme-context"
+import { ThemeContext } from "../utils/theme-context"
 
 export const PageTransition = () => {
   const { theme } = useContext(ThemeContext)
