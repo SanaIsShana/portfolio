@@ -16,8 +16,8 @@ export const HomePage = () => {
 
   const variants: Variants = {
     default: {
-      x: mousePosition.x - 6,
-      y: mousePosition.y - 6,
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
     },
     text: {
       height: 150,
@@ -76,7 +76,7 @@ export const HomePage = () => {
             </div>
             <motion.div
               ref={ref}
-              className="bg-olive h-12px w-12px rounded-full fixed top-0 left-0 pointer-events-none"
+              className="bg-olive h-16 w-16 rounded-full fixed top-0 left-0 pointer-events-none"
               variants={variants}
               animate={cursorVariant}
             />

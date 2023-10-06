@@ -14,8 +14,9 @@ export default {
         body: ["Roboto", "sans-serif"],
       },
       spacing: {
-        67: "58px",
+        16: "16px",
         48: "48px",
+        67: "58px",
       },
     },
   },
