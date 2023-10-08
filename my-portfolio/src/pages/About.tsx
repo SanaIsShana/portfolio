@@ -6,7 +6,7 @@ import { Footer } from "../components/Footer"
 import { Intro } from "../components/IntroSection"
 import { Experience } from "../components/ExperienceSection"
 import { tabs } from "../utils/info"
-import { useSectionProgress } from "../utils/useNavProgress"
+import { useScrollProgress } from "../utils/useScrollProgress"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
@@ -14,7 +14,7 @@ export const About = () => {
   const section1 = useRef<HTMLElement>(null)
   const section2 = useRef<HTMLElement>(null)
   const [scrolledY, setScrolledY] = useState(0)
-  const activeSection = useSectionProgress(scrolledY, [section1, section2])
+  const activeSection = useScrollProgress(scrolledY, [section1, section2])
 
   return (
     <div role="main" className="flex flex-col fixed w-screen h-screen">
