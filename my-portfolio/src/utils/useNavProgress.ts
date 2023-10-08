@@ -1,33 +1,37 @@
-import { RefObject, useEffect, useState } from "react"
+import { RefObject, useLayoutEffect, useState } from "react"
 
 export const useSectionProgress = (
-  sections: Array<RefObject<HTMLElement>>,
-  scrollY: number
+  scrollY: number,
+  sections: RefObject<HTMLElement>[]
 ) => {
   const [activeSection, setActiveSection] = useState("intro")
 
-  useEffect(() => {
+  const clamp = (value: number = 0) => Math.round(value)
+
+  useLayoutEffect(() => {
     const handleScroll = () => {
-      if (sections === null) return
-      const pageYOffset = scrollY
+      const scroll = scrollY
 
-      sections.forEach((section) => {
-        if (section.current === null) return
-        const sectionOffsetTop = section.current?.offsetTop
-        const sectionHeight = section.current?.offsetHeight
+      sections.map((section) => {
+        const rect = section.current?.getBoundingClientRect()
+        const top = clamp(rect?.top)
+        const height = clamp(rect?.height)
+        const id = section.current?.id || ""
 
-        if (pageYOffset > sectionOffsetTop - sectionHeight) {
-          setActiveSection(section.current.id)
+        if (scroll + height >= top && top > 0) {
+          setActiveSection(id)
         }
       })
     }
 
+    window.addEventListener("resize", handleScroll, true)
     window.addEventListener("scroll", handleScroll, true)
 
     return () => {
+      window.removeEventListener("resize", handleScroll, true)
       window.removeEventListener("scroll", handleScroll, true)
     }
-  }, [sections, scrollY])
+  }, [scrollY, sections])
 
   return activeSection
 }

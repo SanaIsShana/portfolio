@@ -14,7 +14,7 @@ export const About = () => {
   const section1 = useRef<HTMLElement>(null)
   const section2 = useRef<HTMLElement>(null)
   const [scrolledY, setScrolledY] = useState(0)
-  const activeSection = useSectionProgress([section1, section2], scrolledY)
+  const activeSection = useSectionProgress(scrolledY, [section1, section2])
 
   return (
     <div role="main" className="flex flex-col fixed w-screen h-screen">
@@ -32,6 +32,7 @@ export const About = () => {
                   className={`${
                     activeSection === item ? "bg-olive rounded-3xl" : ""
                   } p-2`}
+                  onClick={() => setScrolledY(0)}
                 >
                   <a href={`#${item}`}>{`${item.toLocaleUpperCase()}`} </a>
                 </li>
@@ -42,7 +43,7 @@ export const About = () => {
           <div
             className="overflow-x-auto"
             onScroll={(event) => {
-              setScrolledY(event.currentTarget.scrollTop) // 👈
+              setScrolledY(event.currentTarget.scrollTop)
             }}
           >
             <section
