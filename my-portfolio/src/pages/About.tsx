@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react"
-import { ThemeContext } from "../utils/theme-context"
+import { ThemeContext } from "../utils/themeContext"
 import { Intro } from "../components/IntroSection"
 import { Experience } from "../components/ExperienceSection"
 import { tabs } from "../utils/info"

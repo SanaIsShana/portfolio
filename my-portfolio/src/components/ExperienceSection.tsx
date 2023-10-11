@@ -2,9 +2,9 @@ import { experiences } from "../utils/info"
 import Resume from "../../public/assets/Shana-CV.pdf"
 import { AiFillSmile } from "react-icons/ai"
 import { Link } from "react-router-dom"
-import { Variants, motion } from "framer-motion"
 import { useRef, useState } from "react"
 import { useMousePosition } from "../utils/useMousePosition"
+import { LinkAnimation } from "./LinkAnimation"
 
 export const Experience = () => {
   const onResumeClick = () => {
@@ -13,18 +13,6 @@ export const Experience = () => {
   const ref = useRef(null)
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
-  const variants: Variants = {
-    hidden: {
-      opacity: 0,
-      left: mousePosition.x + 15,
-      top: mousePosition.y + 10,
-    },
-    visible: {
-      position: "fixed",
-      left: mousePosition.x + 15,
-      top: mousePosition.y + 10,
-    },
-  }
 
   const textEnter = () => {
     setCursorVariant("visible")
@@ -67,13 +55,10 @@ export const Experience = () => {
           </span>
         </button>
       </div>
-      <motion.div
-        className="w-fit h-fit pointer-events-none bg-white fixed rounded-lg p-1 border-solid border-2 border-darkOlive"
-        variants={variants}
-        animate={cursorVariant}
-      >
-        Go to
-      </motion.div>
+      <LinkAnimation
+        mousePosition={mousePosition}
+        cursorVariant={cursorVariant}
+      />
     </div>
   )
 }

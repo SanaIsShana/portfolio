@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 import { HomePage } from "./pages/Home"
 import { About } from "./pages/About"
-import { ThemeContext } from "./utils/theme-context"
+import { ThemeContext } from "./utils/themeContext"
 import { Layout } from "./components/Layout"
 
 export const App = () => {

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 import LogoLight from "../../public/assets/Logo-light.svg"
 import LogoDark from "../../public/assets/Logo-dark.svg"
-import { ThemeContext } from "../utils/theme-context"
+import { ThemeContext } from "../utils/themeContext"
 import { Link } from "react-router-dom"
 
 export const Header = () => {

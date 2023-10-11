@@ -1,24 +1,12 @@
-import { Variants, motion } from "framer-motion"
 import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { useMousePosition } from "../utils/useMousePosition"
+import { LinkAnimation } from "./LinkAnimation"
 
 export const TechAndEducation = () => {
   const ref = useRef(null)
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
-  const variants: Variants = {
-    hidden: {
-      opacity: 0,
-      left: mousePosition.x + 15,
-      top: mousePosition.y + 10,
-    },
-    visible: {
-      position: "fixed",
-      left: mousePosition.x + 15,
-      top: mousePosition.y + 10,
-    },
-  }
 
   const textEnter = () => {
     setCursorVariant("visible")
@@ -26,6 +14,7 @@ export const TechAndEducation = () => {
   const textLeave = () => {
     setCursorVariant("hidden")
   }
+
   return (
     <div className="p-1 sm:p-2 m-3 w-fit lg:w-2/5 font-mono">
       <div className="text-sm md:text-base lg:text-lg grid grid-rows-9 lg:grid-rows-3 divide-y-2 divide-emerald-600">
@@ -55,13 +44,10 @@ export const TechAndEducation = () => {
           </div>
         </div>
       </div>
-      <motion.div
-        className="w-fit h-fit pointer-events-none bg-white fixed rounded-lg p-1 border-solid border-2 border-darkOlive"
-        variants={variants}
-        animate={cursorVariant}
-      >
-        Go to
-      </motion.div>
+      <LinkAnimation
+        mousePosition={mousePosition}
+        cursorVariant={cursorVariant}
+      />
     </div>
   )
 }

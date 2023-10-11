@@ -1,21 +1,12 @@
-import { useContext, useRef, useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-
-import {
-  ThemeContext,
-  checkVariants,
-  textEnter,
-  textLeave,
-} from "../utils/theme-context"
-
-import { useMousePosition } from "../utils/useMousePosition"
+import { ThemeContext } from "../utils/themeContext"
+import { CursorAnimation } from "../components/CursorAnimation"
 
 export const HomePage = () => {
   const { theme } = useContext(ThemeContext)
   const [cursorVariant, setCursorVariant] = useState("default")
-  const ref = useRef(null)
-  const mousePosition = useMousePosition(ref)
 
   return (
     <div
@@ -27,8 +18,8 @@ export const HomePage = () => {
         <div className="p-2 sm:p-10">
           <div className="flex flex-col text-6xl sm:text-8xl align-start w-fit">
             <p
-              onMouseEnter={() => textEnter(setCursorVariant)}
-              onMouseLeave={() => textLeave(setCursorVariant)}
+              onMouseEnter={() => setCursorVariant("text")}
+              onMouseLeave={() => setCursorVariant("default")}
             >
               Sana Barilade
             </p>
@@ -38,8 +29,8 @@ export const HomePage = () => {
         <div className="p-2 sm:pl-12">
           <div className="flex flex-col text-md sm:text-xl align-start w-3/5">
             <p
-              onMouseEnter={() => textEnter(setCursorVariant)}
-              onMouseLeave={() => textLeave(setCursorVariant)}
+              onMouseEnter={() => setCursorVariant("text")}
+              onMouseLeave={() => setCursorVariant("default")}
             >
               Hi, I recently got my degree in full-stack development. <br />I am
               looking for a new opportunity!
@@ -50,8 +41,8 @@ export const HomePage = () => {
         <div className="absolute bottom-0 right-0 p-2 sm:p-10">
           <div
             className="flex flex-col text-4xl sm:text-6xl"
-            onMouseEnter={() => textEnter(setCursorVariant)}
-            onMouseLeave={() => textLeave(setCursorVariant)}
+            onMouseEnter={() => setCursorVariant("text")}
+            onMouseLeave={() => setCursorVariant("default")}
           >
             <button>
               <Link to="/about">
@@ -63,12 +54,7 @@ export const HomePage = () => {
             <button>Contact</button>
           </div>
         </div>
-        <motion.div
-          ref={ref}
-          className="bg-olive h-16 w-16 rounded-full fixed top-0 left-0 pointer-events-none"
-          variants={checkVariants(mousePosition)}
-          animate={cursorVariant}
-        />
+        <CursorAnimation cursorVariant={cursorVariant} />
       </div>
     </div>
   )

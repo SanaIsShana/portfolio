@@ -1,5 +1,5 @@
 import { FC, ReactNode, useContext } from "react"
-import { ThemeContext } from "../utils/theme-context"
+import { ThemeContext } from "../utils/themeContext"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
 

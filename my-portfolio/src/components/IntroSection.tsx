@@ -1,24 +1,12 @@
-import { Variants, motion } from "framer-motion"
 import { useMousePosition } from "../utils/useMousePosition"
 import { useRef, useState } from "react"
 import code from "../../public/assets/code.gif"
+import { LinkAnimation } from "./LinkAnimation"
 
 export const Intro = () => {
   const ref = useRef(null)
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
-  const variants: Variants = {
-    hidden: {
-      opacity: 0,
-      left: mousePosition.x + 15,
-      top: mousePosition.y + 10,
-    },
-    visible: {
-      position: "fixed",
-      left: mousePosition.x + 15,
-      top: mousePosition.y + 10,
-    },
-  }
 
   const textEnter = () => {
     setCursorVariant("visible")
@@ -52,13 +40,12 @@ export const Intro = () => {
         </p>
       </div>
 
-      <motion.div
-        className="w-fit h-fit pointer-events-none fixed"
-        variants={variants}
-        animate={cursorVariant}
+      <LinkAnimation
+        mousePosition={mousePosition}
+        cursorVariant={cursorVariant}
       >
         <img src={code} className="h-10 bg-olive rounded-full p-1" />
-      </motion.div>
+      </LinkAnimation>
     </div>
   )
 }
