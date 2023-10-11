@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs"
 import { motion } from "framer-motion"
 
@@ -15,6 +15,18 @@ export const Header = () => {
     setTheme(isCurrentDark ? "light" : "dark")
     localStorage.setItem("theme", isCurrentDark ? "light" : "dark")
   }
+
+  const [date, setDate] = useState(new Date())
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDate(new Date())
+    }, 1000)
+
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
 
   return (
     <>
@@ -43,7 +55,10 @@ export const Header = () => {
             </Link>
           </motion.div>
         </button>
-        <div className="flex flex-col justify-center">
+        <div className="flex justify-center space-x-1">
+          <div>
+            <p>{date.toLocaleString()}</p>
+          </div>
           {theme === "dark" ? (
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
               <BsFillMoonFill

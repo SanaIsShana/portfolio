@@ -7,14 +7,20 @@ import { Intro } from "../components/IntroSection"
 import { Experience } from "../components/ExperienceSection"
 import { tabs } from "../utils/info"
 import { useScrollProgress } from "../utils/useScrollProgress"
+import { TechAndEducation } from "../components/TechAndEducation"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
 
   const section1 = useRef<HTMLElement>(null)
   const section2 = useRef<HTMLElement>(null)
+  const section3 = useRef<HTMLElement>(null)
   const [scrolledY, setScrolledY] = useState(0)
-  const activeSection = useScrollProgress(scrolledY, [section1, section2])
+  const activeSection = useScrollProgress(scrolledY, [
+    section1,
+    section2,
+    section3,
+  ])
 
   return (
     <div
@@ -58,12 +64,19 @@ export const About = () => {
             <section
               ref={section1}
               id="intro"
-              className="flex h-full justify-center"
+              className="flex h-full justify-center items-center"
             >
               <Intro />
             </section>
             <section
               ref={section2}
+              id="education"
+              className="flex h-full justify-center"
+            >
+              <TechAndEducation />
+            </section>
+            <section
+              ref={section3}
               id="experience"
               className="flex h-full justify-center"
             >

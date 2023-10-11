@@ -49,6 +49,19 @@ export const HomePage = () => {
               </div>
             </div>
 
+            <div className="p-2 sm:pl-12">
+              <div className="flex flex-col font-header text-md sm:text-xl align-start w-3/5">
+                <p
+                  className="font-header"
+                  onMouseEnter={() => textEnter(setCursorVariant)}
+                  onMouseLeave={() => textLeave(setCursorVariant)}
+                >
+                  Hi, I recently got my degree in full-stack development. <br />
+                  I am looking for a new opportunity!
+                </p>
+              </div>
+            </div>
+
             <div className="absolute bottom-0 right-0 p-2 sm:p-10">
               <div
                 className="flex flex-col font-header text-4xl sm:text-6xl"

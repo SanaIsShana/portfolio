@@ -32,6 +32,29 @@ export const checkVariants = (mousePosition: { x: number; y: number }) => {
   return variants
 }
 
+export const aboutPageCursorVariants = (mousePosition: {
+  x: number
+  y: number
+}) => {
+  const variants: Variants = {
+    default: {
+      opacity: 0,
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
+    },
+    text: {
+      height: 150,
+      width: 150,
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75,
+      backgroundColor: "#a3b899",
+      mixBlendMode: "difference",
+    },
+  }
+
+  return variants
+}
+
 export const textEnter = (setCursorVariant: (variant: string) => void) => {
   setCursorVariant("text")
 }
