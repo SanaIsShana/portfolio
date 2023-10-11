@@ -9,7 +9,7 @@ export const PageTransition = () => {
     <>
       <motion.div
         className={`fixed top-0 left-0 w-full h-screen origin-bottom ${
-          theme === "dark" ? "bg-black" : "bg-black"
+          theme === "dark" ? "bg-dustyPink" : "bg-black"
         }`}
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}

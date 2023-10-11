@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { HomePage } from "./pages/Home"
 import { About } from "./pages/About"
 import { ThemeContext } from "./utils/theme-context"
+import { Layout } from "./components/Layout"
 
 export const App = () => {
   const isBrowserDefaultDark = () =>
@@ -17,10 +18,12 @@ export const App = () => {
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </Layout>
         </BrowserRouter>
       </ThemeContext.Provider>
     </>

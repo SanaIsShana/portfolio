@@ -1,18 +1,10 @@
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa"
-import { useContext } from "react"
 import { motion } from "framer-motion"
-
-import { ThemeContext } from "../utils/theme-context"
 import { Link } from "react-router-dom"
 
 export const Footer = () => {
-  const { theme } = useContext(ThemeContext)
   return (
-    <div
-      className={`bottom-10 w-full flex flex-row justify-center space-x-2 ${
-        theme === "dark" ? "text-dustyPink" : "text-black"
-      }`}
-    >
+    <div className="sticky bottom-0 w-full flex flex-row justify-center space-x-2">
       <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
         <Link
           to={{ pathname: "//www.linkedin.com/in/shana-shana" }}
