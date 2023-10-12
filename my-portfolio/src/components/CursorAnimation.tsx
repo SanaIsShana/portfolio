@@ -20,9 +20,8 @@ export const CursorAnimation = ({ cursorVariant }: CursorAnimationProps) => {
       width: 150,
       x: mousePosition.x - 75,
       y: mousePosition.y - 75,
-      backgroundColor: "#a3b899",
+      backgroundColor: "#fceee9",
       mixBlendMode: "difference",
-      filter: "blur(3px)",
     },
   }
 

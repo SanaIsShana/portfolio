@@ -14,7 +14,13 @@ export const HomePage = () => {
         theme === "dark" ? "border-dustyPink" : "border-black"
       } m-3 sm:m-7 font-header flex-col h-3/4`}
     >
-      <div className="relative h-full bg-bottom bg-contain bg-no-repeat bg-[url('../public/assets/bg-img.svg')]">
+      <div
+        className={`relative h-full bg-bottom bg-contain bg-no-repeat ${
+          theme === "dark"
+            ? "bg-[url('../public/assets/bg-dark.svg')]"
+            : "bg-[url('../public/assets/bg-img.svg')]"
+        }`}
+      >
         <div className="p-2 sm:p-10">
           <div className="flex flex-col text-6xl sm:text-8xl align-start w-fit">
             <p
