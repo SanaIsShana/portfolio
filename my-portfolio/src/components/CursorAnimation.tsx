@@ -22,6 +22,7 @@ export const CursorAnimation = ({ cursorVariant }: CursorAnimationProps) => {
       y: mousePosition.y - 75,
       backgroundColor: "#a3b899",
       mixBlendMode: "difference",
+      filter: "blur(3px)",
     },
   }
 

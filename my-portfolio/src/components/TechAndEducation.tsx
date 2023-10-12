@@ -37,7 +37,7 @@ export const TechAndEducation = () => {
             <div>Full-stack development</div>
           </div>
           <div className="col-span-2 mt-2">
-            <div className="">
+            <div>
               JavaScript, Java, HTML, CSS, Bootstrap, React, Java Spring, MySQL,
               MongoDB, Node.js, REST API, Git, Figma
             </div>

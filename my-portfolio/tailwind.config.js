@@ -8,6 +8,9 @@ export default {
         darkOlive: "#667b68",
         lightGreen: "#dde6d5",
         dustyPink: "#fceee9",
+        red: "#dd9787",
+        green: "#a6c48a",
+        yellow: "#ffe599",
       },
       fontFamily: {
         header: ["Calistoga", "cursive"],
@@ -16,7 +19,12 @@ export default {
       spacing: {
         16: "16px",
         48: "48px",
-        67: "58px",
+        58: "58px",
+        68: "68px",
+        200: "100px",
+      },
+      backgroundImage: {
+        homeImg: "url('../public/assets/bg-img.svg')",
       },
     },
   },
