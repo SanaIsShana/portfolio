@@ -7,7 +7,7 @@ interface LinkAnimationProps {
     y: number
   }
   cursorVariant: string
-  children?: ReactNode
+  children: ReactNode
 }
 
 export const LinkAnimation: FC<LinkAnimationProps> = ({
@@ -38,7 +38,7 @@ export const LinkAnimation: FC<LinkAnimationProps> = ({
       variants={variants}
       animate={cursorVariant}
     >
-      {children !== undefined ? children : "Go to"}
+      {children}
     </motion.div>
   )
 }

@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
-import { HomePage } from "./pages/Home"
+import { HomePage } from "./pages/HomePage"
 import { About } from "./pages/About"
 import { ThemeContext } from "./utils/themeContext"
 import { Layout } from "./components/Layout"
+import { Projects } from "./pages/Projects"
+import { Contact } from "./pages/Contact"
 
 export const App = () => {
   const isBrowserDefaultDark = () =>
@@ -21,7 +23,10 @@ export const App = () => {
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/home" element={<HomePage />} />
               <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </Layout>
         </BrowserRouter>

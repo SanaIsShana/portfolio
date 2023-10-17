@@ -1,5 +1,7 @@
 export const tabs = ["intro", "education", "experience"]
 
+export const navbarTabs = ["home", "about", "projects", "contact"]
+
 export interface Experience {
   time: string
   title: string
@@ -29,3 +31,5 @@ export const experiences = [
     tech: "Typescript, Angular, Bootstrap, CSS, HTML, PostgreSQL, PHP, Laravel",
   },
 ]
+
+

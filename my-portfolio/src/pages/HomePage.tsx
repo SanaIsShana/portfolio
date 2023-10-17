@@ -46,15 +46,15 @@ export const HomePage = () => {
           />
         </motion.div>
         <div className="p-2 sm:pl-12">
-          <div className="flex flex-col text-md sm:text-xl align-start w-3/5">
-            <p
-              className="w-fit"
-              onMouseEnter={() => setCursorVariant("text")}
-              onMouseLeave={() => setCursorVariant("default")}
-            >
-              Hi, I recently got my degree in full-stack development.
-              <br />I am looking for a new opportunity!
-            </p>
+          <div
+            className="flex flex-col text-md sm:text-xl align-start w-fit"
+            onMouseEnter={() => setCursorVariant("text")}
+            onMouseLeave={() => setCursorVariant("default")}
+          >
+            <TextAnimation className="w-fit">
+              Hi, I recently got my degree in full-stack development. <br />I am
+              looking for a new opportunity!
+            </TextAnimation>
           </div>
           <motion.div
             className="bg-red rounded-full h-58 w-58 blur-lg"
@@ -83,9 +83,7 @@ export const HomePage = () => {
             onMouseLeave={() => setCursorVariant("default")}
           >
             <button>
-              <Link to="/about">
-                <TextAnimation text={"About"} />
-              </Link>
+              <Link to="/about">About</Link>
             </button>
             <button>
               <Link to="/projects">Projects</Link>

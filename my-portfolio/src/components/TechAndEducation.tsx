@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { useMousePosition } from "../utils/useMousePosition"
 import { LinkAnimation } from "./LinkAnimation"
+import { BsArrowUpRightCircle } from "react-icons/bs"
 
 export const TechAndEducation = () => {
   const ref = useRef(null)
@@ -47,7 +48,12 @@ export const TechAndEducation = () => {
       <LinkAnimation
         mousePosition={mousePosition}
         cursorVariant={cursorVariant}
-      />
+      >
+        <BsArrowUpRightCircle
+          size={30}
+          className=" bg-olive rounded-full p-1"
+        />
+      </LinkAnimation>
     </div>
   )
 }

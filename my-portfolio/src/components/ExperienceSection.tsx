@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { useRef, useState } from "react"
 import { useMousePosition } from "../utils/useMousePosition"
 import { LinkAnimation } from "./LinkAnimation"
+import { BsArrowUpRightCircle } from "react-icons/bs"
 
 export const Experience = () => {
   const onResumeClick = () => {
@@ -58,7 +59,12 @@ export const Experience = () => {
       <LinkAnimation
         mousePosition={mousePosition}
         cursorVariant={cursorVariant}
-      />
+      >
+        <BsArrowUpRightCircle
+          size={30}
+          className=" bg-olive rounded-full p-1"
+        />
+      </LinkAnimation>
     </div>
   )
 }
