@@ -83,9 +83,7 @@ export const HomePage = () => {
             onMouseLeave={() => setCursorVariant("default")}
           >
             <button>
-              <Link to="/about">
-                <TextAnimation text={"About"} />
-              </Link>
+              <Link to="/about">About</Link>
             </button>
             <button>
               <Link to="/projects">Projects</Link>
