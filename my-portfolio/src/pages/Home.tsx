@@ -19,8 +19,8 @@ export const HomePage = () => {
       <div
         className={`relative h-full bg-bottom bg-contain bg-no-repeat ${
           theme === "dark"
-            ? "bg-[url('../public/assets/bg-dark.svg')]"
-            : "bg-[url('../public/assets/bg-img.svg')]"
+            ? "bg-[url('../public/assets/dark.svg')]"
+            : "bg-[url('../public/assets/light.svg')]"
         }`}
       >
         <div className="p-2 sm:p-10">

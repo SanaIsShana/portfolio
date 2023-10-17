@@ -28,54 +28,78 @@ export const Contact = () => {
         theme === "dark" ? "border-dustyPink" : "border-black"
       } m-3 sm:m-7 font-header h-3/4`}
     >
-      <div className="flex p-10 w-fit items-center h-full" ref={ref}>
-        <div className="p-2 sm:p-10">
-          <div className="flex flex-row text-lg sm:text-2xl justify-between gap-8">
+      <div
+        className={`flex h-full justify-center items-center bg-gradient-to-r ${
+          theme === "dark"
+            ? "from-sky-900 via-gray-600 to-stone-900"
+            : "from-[#EEE0C9] via-gray-100 to-[#ADC4CE]"
+        }`}
+      >
+        <div className="flex p-10 w-fit items-center h-full" ref={ref}>
+          <div className="text-lg sm:text-2xl grid lg:grid-cols-2 grid-cols-1 gap-2 lg:gap-5">
             <div className="flex flex-col">
-              <p className="">Email:</p>
+              <p>Email:</p>
               <Link
                 to="javascript:void(0)"
                 onClick={() =>
                   (window.location.href = "mailto:sanabarilad@gmail.com")
                 }
               >
-                <motion.p
+                <motion.div
                   className="text-md sm:text-lg"
                   onMouseEnter={() => textEnter("mail")}
                   onMouseLeave={textLeave}
-                  whileHover={{ scale: 1.1, color: "#667b68" }}
+                  whileHover={{ scale: 1.1 }}
                 >
-                  sanabarilad@gmail.com
-                </motion.p>
+                  <p
+                    className={`${
+                      theme === "dark" ? " text-dustyPink" : " text-black"
+                    }`}
+                  >
+                    sanabarilad@gmail.com
+                  </p>
+                </motion.div>
               </Link>
             </div>
             <div className="flex flex-col justify-center">
-              <p className="">Other:</p>
+              <p>Other:</p>
               <Link
                 to={{ pathname: "//www.linkedin.com/in/shana-shana" }}
                 target="_blank"
               >
-                <motion.p
+                <motion.div
                   className="text-md sm:text-lg cursor-pointer"
                   onMouseEnter={() => textEnter("arrow")}
                   onMouseLeave={textLeave}
-                  whileHover={{ scale: 1.1, color: "#667b68" }}
+                  whileHover={{ scale: 1.1 }}
                 >
-                  LinkedIn
-                </motion.p>
+                  <p
+                    className={`${
+                      theme === "dark" ? " text-dustyPink" : " text-black"
+                    }`}
+                  >
+                    LinkedIn
+                  </p>
+                </motion.div>
               </Link>
               <Link
                 to={{ pathname: "//github.com/SanaIsShana" }}
                 target="_blank"
               >
-                <motion.p
-                  className="text-md sm:text-lg cursor-pointer"
+                <motion.div
+                  className="text-md sm:text-lg cursor-pointer "
                   onMouseEnter={() => textEnter("arrow")}
                   onMouseLeave={textLeave}
-                  whileHover={{ scale: 1.1, color: "#667b68" }}
+                  whileHover={{ scale: 1.1 }}
                 >
-                  Github
-                </motion.p>
+                  <p
+                    className={`${
+                      theme === "dark" ? " text-dustyPink" : " text-black"
+                    }`}
+                  >
+                    Github
+                  </p>
+                </motion.div>
               </Link>
             </div>
           </div>
