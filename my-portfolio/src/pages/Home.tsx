@@ -11,10 +11,27 @@ export const HomePage = () => {
   const constraintsRef = useRef(null)
 
   return (
-    <div
+    <motion.div
       className={`flex border-solid border-4 rounded-lg ${
         theme === "dark" ? "border-dustyPink" : "border-black"
       } m-3 sm:m-7 font-header flex-col h-3/4`}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          ease: "linear",
+          duration: 2,
+          x: { duration: 1 },
+        },
+      }}
+      exit={{
+        opacity: 0,
+        transition: {
+          ease: "linear",
+          duration: 2,
+          x: { duration: 1 },
+        },
+      }}
     >
       <div
         className={`relative h-full bg-bottom bg-contain bg-no-repeat ${
@@ -95,6 +112,6 @@ export const HomePage = () => {
         </div>
         <CursorAnimation cursorVariant={cursorVariant} />
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -5,6 +5,7 @@ import { Experience } from "../components/ExperienceSection"
 import { tabs } from "../utils/info"
 import { useScrollProgress } from "../utils/useScrollProgress"
 import { TechAndEducation } from "../components/TechAndEducation"
+import { motion } from "framer-motion"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
@@ -20,10 +21,27 @@ export const About = () => {
   ])
 
   return (
-    <div
+    <motion.div
       className={`flex flex-col border-solid border-4 rounded-lg ${
         theme === "dark" ? "border-dustyPink" : "border-black"
       } m-3 sm:m-7 font-header h-3/4`}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          ease: "linear",
+          duration: 2,
+          x: { duration: 1 },
+        },
+      }}
+      exit={{
+        opacity: 0,
+        transition: {
+          ease: "linear",
+          duration: 2,
+          x: { duration: 1 },
+        },
+      }}
     >
       <nav className="flex p-1 sticky top-0 w-full pl-5 pt-5">
         <ul className="flex justify-start space-x-2">
@@ -68,6 +86,6 @@ export const About = () => {
           <Experience />
         </section>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -1,12 +1,7 @@
 import { useState } from "react"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-
-import { HomePage } from "./pages/Home"
-import { About } from "./pages/About"
+import { BrowserRouter } from "react-router-dom"
 import { ThemeContext } from "./utils/themeContext"
-import { Layout } from "./components/Layout"
-import { Projects } from "./pages/Projects"
-import { Contact } from "./pages/Contact"
+import { AnimatedRoutes } from "./components/AnimatedRoutes"
 
 export const App = () => {
   const isBrowserDefaultDark = () =>
@@ -20,15 +15,7 @@ export const App = () => {
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/home" element={<HomePage />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Layout>
+          <AnimatedRoutes />
         </BrowserRouter>
       </ThemeContext.Provider>
     </>
