@@ -17,11 +17,14 @@ export const TechAndEducation = () => {
   }
 
   return (
-    <div className="p-1 sm:p-2 m-3 w-fit lg:w-2/5 font-mono">
-      <div className="text-sm md:text-base lg:text-lg grid grid-rows-9 lg:grid-rows-3 divide-y-2 divide-emerald-600">
+    <div className="p-1 sm:p-2 m-3 w-fit sm:w-2/5 font-mono">
+      <div className="text-sm md:text-base lg:text-lg">
         <div className="pt-2 pb-2">
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-0 lg:gap-2">
-            <div>August, 2021 - June, 2023</div>
+          <div className="col-span-2">
+            <p>August, 2021 - June, 2023</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 lg:gap-2 mt-2">
+            <p> Fullstack development</p>
             <Link
               ref={ref}
               to={{ pathname: "//teknikhogskolan.se/" }}
@@ -30,18 +33,17 @@ export const TechAndEducation = () => {
               <div
                 onMouseEnter={textEnter}
                 onMouseLeave={textLeave}
-                className="underline decoration-1"
+                className="underline decoration-1 flex justify-start"
               >
-                Teknikhögskolan in Lund
+                Teknikhögskolan
               </div>
             </Link>
-            <div>Full-stack development</div>
           </div>
           <div className="col-span-2 mt-2">
-            <div>
+            <p>
               JavaScript, Java, HTML, CSS, Bootstrap, React, Java Spring, MySQL,
               MongoDB, Node.js, REST API, Git, Figma
-            </div>
+            </p>
           </div>
         </div>
       </div>

@@ -16,10 +16,11 @@ export const useScrollProgress = (
         if (section.current === null) return
         const rect = section.current.getBoundingClientRect()
         const top = clamp(rect.top)
+        const bottom = clamp(rect.bottom)
         const height = clamp(rect.height)
         const id = section.current.id
 
-        if (scroll + height >= top) {
+        if ((scroll > top && scroll < bottom) || (top < height && top > 0)) {
           setActiveSection(id)
         }
       })

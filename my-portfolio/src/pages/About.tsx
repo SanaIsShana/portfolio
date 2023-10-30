@@ -45,11 +45,12 @@ export const About = () => {
     >
       <nav className="flex p-1 sticky top-0 w-full pl-5 pt-5">
         <ul className="flex justify-start space-x-2">
-          {tabs.map((item) => (
+          {tabs.map((item, index) => (
             <li
               className={`${
                 activeSection === item ? "bg-olive rounded-3xl" : ""
               } p-2`}
+              key={index}
               onClick={() => setScrolledY(0)}
             >
               <a href={`#${item}`}>{`${item.toLocaleUpperCase()}`} </a>
@@ -74,7 +75,7 @@ export const About = () => {
         <section
           ref={section2}
           id="education"
-          className="flex h-full justify-center"
+          className="flex h-full justify-center items-center"
         >
           <TechAndEducation />
         </section>

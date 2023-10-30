@@ -11,24 +11,34 @@ export interface Experience {
 export const experiences = [
   {
     time: "June - August, 2023",
-    title: "Front-end Developer (Summer Worker)",
+    title: "Frontend Developer (Summer Worker)",
     company: "Axis Communications",
     link: "//www.axis.com/",
     tech: "Typescript, React, GraphQL, Styled-components, CSS, HTML, Git",
   },
   {
     time: "January - May, 2023",
-    title: "Front-end Developer (Intern)",
+    title: "Frontend Developer (Intern)",
     company: "Axis Communications",
     link: "//www.axis.com/",
     tech: "Typescript, React, GraphQL, Styled-components, CSS, HTML, Git",
   },
   {
     time: "April - August, 2022",
-    title: "Full-stack Developer (Intern)",
+    title: "Fullstack Developer (Intern)",
     company: "Bookboost",
     link: "//www.bookboost.io/",
     tech: "Typescript, Angular, Bootstrap, CSS, HTML, PostgreSQL, PHP, Laravel",
+  },
+]
+
+export const projects = [
+  {
+    id: "1",
+    time: "2023",
+    title: "Portfolio",
+    link: "//github.com/SanaIsShana/portfolio",
+    tech: "Typescript, React, Tailwind, CSS, HTML, Framer Motion",
   },
 ]
 

@@ -69,7 +69,7 @@ export const HomePage = () => {
               onMouseEnter={() => setCursorVariant("text")}
               onMouseLeave={() => setCursorVariant("default")}
             >
-              Hi, I recently got my degree in full-stack development.
+              Hi, I recently got my degree in web development.
               <br />I am looking for a new opportunity!
             </p>
           </div>
