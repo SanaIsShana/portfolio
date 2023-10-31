@@ -52,7 +52,10 @@ export const Projects = () => {
             <>
               <div className="grid grid-cols-1 w-3/6">
                 <p className="m-1 text-center">{project.tech}</p>
-                <img src={portfolio} className="w-auto m-1" />
+                <div className="w-5/6 m-1">
+                  <img src={portfolio} className="w-auto" />
+                </div>
+
                 <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
                   <Link to={{ pathname: `${project.link}` }} target="_blank">
                     Github

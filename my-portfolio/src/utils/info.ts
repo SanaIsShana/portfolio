@@ -2,6 +2,18 @@ export const tabs = ["intro", "education", "experience"]
 
 export const navbarTabs = ["home", "about", "projects", "contact"]
 
+export const skillsList = [
+  "Typescript",
+  "Javascript",
+  "React",
+  "Angular",
+  "GraphQL",
+  "HTML",
+  "CSS",
+  "Bootstrap",
+  "Tailwind",
+]
+
 export interface Experience {
   time: string
   title: string

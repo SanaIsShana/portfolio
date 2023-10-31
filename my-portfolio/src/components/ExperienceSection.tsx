@@ -9,7 +9,7 @@ import { BsArrowUpRightCircle } from "react-icons/bs"
 import { ThemeContext } from "../utils/themeContext"
 
 export const Experience = () => {
-  const { theme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
     const onResumeClick = () => {
       window.open(Resume)
     }
@@ -59,7 +59,9 @@ export const Experience = () => {
 
         <div className="flex justify-end align-baseline">
           <button
-            className="flex w-fit cursor-pointer items-center bg-olive gap-1 p-1 rounded-lg mt-3"
+            className={`flex w-fit cursor-pointer items-center ${
+              theme === "dark" ? "bg-darkOlive" : "bg-olive"
+            } gap-1 p-1 rounded-lg mt-3`}
             onClick={onResumeClick}
           >
             <span className="font-header"> Check my full resume!</span>
@@ -74,7 +76,7 @@ export const Experience = () => {
         >
           <BsArrowUpRightCircle
             size={30}
-            className=" bg-olive rounded-full p-1"
+            className="bg-olive rounded-full p-1"
           />
         </LinkAnimation>
       </div>

@@ -35,7 +35,7 @@ export const Header = () => {
 
       <div className="flex justify-center">
         {theme === "dark" ? (
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
+          <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
             <BsFillMoonFill
               className="cursor-pointer"
               onClick={handleThemeChange}
@@ -43,7 +43,7 @@ export const Header = () => {
             />
           </motion.div>
         ) : (
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
+          <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
             <BsFillSunFill
               className="cursor-pointer"
               onClick={handleThemeChange}

@@ -24,7 +24,7 @@ export const About = () => {
     <motion.div
       className={`flex flex-col border-solid border-4 rounded-lg ${
         theme === "dark" ? "border-dustyPink" : "border-black"
-      } m-3 sm:m-7 font-header h-3/4`}
+      } m-3 sm:m-7 h-3/4`}
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -43,13 +43,17 @@ export const About = () => {
         },
       }}
     >
-      <nav className="flex p-1 sticky top-0 w-full pl-5 pt-5">
-        <ul className="flex justify-start space-x-2">
+      <nav className="flex p-1 sticky top-0 w-full pl-2 sm:pl-5 pt-5 font-header">
+        <ul className="flex justify-start text-xs lg:text-lg">
           {tabs.map((item, index) => (
             <li
               className={`${
-                activeSection === item ? "bg-olive rounded-3xl" : ""
-              } p-2`}
+                activeSection === item
+                  ? theme === "dark"
+                    ? "bg-darkOlive"
+                    : "bg-olive"
+                  : ""
+              } p-2 rounded-3xl`}
               key={index}
               onClick={() => setScrolledY(0)}
             >
@@ -60,7 +64,7 @@ export const About = () => {
       </nav>
 
       <div
-        className="overflow-x-auto"
+        className="overflow-x-auto font-mono"
         onScroll={(event) => {
           setScrolledY(event.currentTarget.scrollTop)
         }}
