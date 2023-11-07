@@ -8,7 +8,8 @@ import { TextAnimation } from "../components/TextAnimation"
 export const HomePage = () => {
   const { theme } = useContext(ThemeContext)
   const [cursorVariant, setCursorVariant] = useState("default")
-  const constraintsRef = useRef(null)
+  const constraintsRefY = useRef(null)
+  const constraintsRefG = useRef(null)
 
   return (
     <motion.div
@@ -46,10 +47,10 @@ export const HomePage = () => {
             onMouseEnter={() => setCursorVariant("text")}
             onMouseLeave={() => setCursorVariant("default")}
           >
-            <TextAnimation text={"Sana Barilade"} />
+            <TextAnimation text={"Sana Barilide"} />
           </div>
         </div>
-        <motion.div ref={constraintsRef}>
+        <motion.div ref={constraintsRefY}>
           <motion.div
             className="bg-yellow rounded-full h-200 w-200 blur-lg fixed flex flex-col right-5 cursor-pointer"
             animate={{ scale: 2 }}
@@ -59,7 +60,7 @@ export const HomePage = () => {
               repeatType: "reverse",
             }}
             drag
-            dragConstraints={constraintsRef}
+            dragConstraints={constraintsRefY}
           />
         </motion.div>
         <div className="p-2 sm:pl-12">
@@ -69,47 +70,47 @@ export const HomePage = () => {
               onMouseEnter={() => setCursorVariant("text")}
               onMouseLeave={() => setCursorVariant("default")}
             >
-              Hi, I recently got my degree in web development.
+              Hi, I am a frontend developer.
               <br />I am looking for a new opportunity!
             </p>
           </div>
-          <motion.div
-            className="bg-red rounded-full h-58 w-58 blur-lg"
-            animate={{ scale: 1.5 }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
         </div>
 
         <div className="absolute bottom-0 right-0 p-2 sm:p-10">
+          <div className="flex flex-col text-4xl sm:text-6xl">
+            <motion.button
+              whileHover={{ fontStyle: "italic", scale: 1.1 }}
+              whileTap={{ scale: 1.5 }}
+            >
+              <Link to="/about">About</Link>
+            </motion.button>
+            <motion.button
+              whileHover={{ fontStyle: "italic", scale: 1.1 }}
+              whileTap={{ scale: 1.5 }}
+            >
+              <Link to="/projects">Projects</Link>
+            </motion.button>
+            <motion.button
+              whileHover={{ fontStyle: "italic", scale: 1.1 }}
+              whileTap={{ scale: 1.5 }}
+            >
+              <Link to="/contact">Contact</Link>
+            </motion.button>
+          </div>
+        </div>
+        <motion.div ref={constraintsRefG}>
           <motion.div
-            className="bg-green rounded-full h-58 w-58 blur-lg"
+            className="bg-green rounded-full h-58 w-58 blur-lg cursor-pointer"
             animate={{ scale: 1.5 }}
             transition={{
               duration: 2,
               repeat: Infinity,
               repeatType: "reverse",
             }}
+            drag
+            dragConstraints={constraintsRefG}
           />
-          <div
-            className="flex flex-col text-4xl sm:text-6xl"
-            onMouseEnter={() => setCursorVariant("text")}
-            onMouseLeave={() => setCursorVariant("default")}
-          >
-            <button>
-              <Link to="/about">About</Link>
-            </button>
-            <button>
-              <Link to="/projects">Projects</Link>
-            </button>
-            <button>
-              <Link to="/contact">Contact</Link>
-            </button>
-          </div>
-        </div>
+        </motion.div>
         <CursorAnimation cursorVariant={cursorVariant} />
       </div>
     </motion.div>

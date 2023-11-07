@@ -20,6 +20,14 @@ export interface Experience {
   company: string
 }
 
+export interface Project {
+  id: string
+  time: string
+  title: string
+  link: string
+  techList: string[]
+}
+
 export const experiences = [
   {
     time: "June - August, 2023",
@@ -44,14 +52,28 @@ export const experiences = [
   },
 ]
 
-export const projects = [
+export const projects: Array<Project> = [
   {
     id: "1",
     time: "2023",
     title: "Portfolio",
     link: "//github.com/SanaIsShana/portfolio",
-    tech: "Typescript, React, Tailwind, CSS, HTML, Framer Motion",
+    techList: [
+      "Typescript",
+      "React",
+      "Tailwind",
+      "CSS",
+      "HTML",
+      "Framer Motion",
+    ],
   },
+]
+
+export const portfolioProjectImages = [
+  "../../public/assets/p-1.png",
+  "../../public/assets/p-2.png",
+  "../../public/assets/p-3.png",
+  "../../public/assets/p-4.png",
 ]
 
 

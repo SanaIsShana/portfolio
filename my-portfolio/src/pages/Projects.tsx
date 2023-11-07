@@ -1,15 +1,17 @@
 import { useContext, useRef, useState } from "react"
 import { ThemeContext } from "../utils/themeContext"
-import portfolio from "../../public/assets/portfolio.svg"
 import { motion } from "framer-motion"
-import { projects } from "../utils/info"
-import { Link } from "react-router-dom"
-import { LinkAnimation } from "../components/LinkAnimation"
+import { portfolioProjectImages, projects } from "../utils/info"
 import { useMousePosition } from "../utils/useMousePosition"
+import { LinkAnimation } from "../components/LinkAnimation"
 import { BsArrowUpRightCircle } from "react-icons/bs"
+import { Link } from "react-router-dom"
+import { FaGithubSquare } from "react-icons/fa"
+import { ImageCarousel } from "../components/ImageCarousel"
 
 export const Projects = () => {
   const { theme } = useContext(ThemeContext)
+
   const ref = useRef(null)
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
@@ -44,29 +46,44 @@ export const Projects = () => {
       }}
     >
       <div
-        className="grid justify-items-center font-mono overflow-x-auto text-xs lg:text-lg"
         ref={ref}
+        className="grid justify-items-center font-mono overflow-x-auto text-xs lg:text-lg h-full justify-center items-center"
       >
-        {projects.map((project) => {
-          return (
-            <>
-              <div className="grid grid-cols-1 w-3/6">
-                <p className="m-1 text-center">{project.tech}</p>
-                <div className="w-5/6 m-1">
-                  <img src={portfolio} className="w-auto" />
+        {projects.map((project, index) => (
+          <>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 w-full p-2 sm:w-4/6 sm:p-0 gap-3"
+              key={project.id}
+            >
+              <div className="flex items-center">
+                <ImageCarousel images={portfolioProjectImages} />
+              </div>
+              <div className="pl-1">
+                <div className="flex gap-2 items-center">
+                  {project.title} - {project.time}
+                  <Link to={{ pathname: `${project.link}` }} target="_blank">
+                    <FaGithubSquare
+                      size={30}
+                      className="cursor-pointer"
+                      onMouseEnter={textEnter}
+                      onMouseLeave={textLeave}
+                    />
+                  </Link>
                 </div>
 
-                <button onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                  <Link to={{ pathname: `${project.link}` }} target="_blank">
-                    Github
-                  </Link>
-                </button>
+                <div className="grid grid-cols-1 gap-1">
+                  {project.techList.map((tech, index) => (
+                    <p key={index}>- {tech}</p>
+                  ))}
+                </div>
               </div>
-            </>
-          )
-        })}
+            </div>
+            {index == projects.length - 1 ? (
+              <div>More projects coming soon...</div>
+            ) : null}
+          </>
+        ))}
       </div>
-
       <LinkAnimation
         mousePosition={mousePosition}
         cursorVariant={cursorVariant}
