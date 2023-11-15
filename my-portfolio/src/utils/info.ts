@@ -14,12 +14,6 @@ export const skillsList = [
   "Tailwind",
 ]
 
-export interface Experience {
-  time: string
-  title: string
-  company: string
-}
-
 export interface Project {
   id: string
   time: string

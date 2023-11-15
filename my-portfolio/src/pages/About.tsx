@@ -43,7 +43,7 @@ export const About = () => {
         },
       }}
     >
-      <nav className="flex p-1 sticky top-0 w-full pl-2 sm:pl-5 pt-5 font-header">
+      <nav className="flex p-1 top-0 w-full pl-2 sm:pl-5 pt-5 font-header">
         <ul className="flex justify-start text-xs lg:text-lg">
           {tabs.map((item, index) => (
             <li

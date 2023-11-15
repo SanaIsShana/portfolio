@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { ThemeContext } from "../utils/themeContext"
@@ -8,8 +8,6 @@ import { TextAnimation } from "../components/TextAnimation"
 export const HomePage = () => {
   const { theme } = useContext(ThemeContext)
   const [cursorVariant, setCursorVariant] = useState("default")
-  const constraintsRefY = useRef(null)
-  const constraintsRefG = useRef(null)
 
   return (
     <motion.div
@@ -35,35 +33,31 @@ export const HomePage = () => {
       }}
     >
       <div
-        className={`relative h-full bg-bottom bg-contain bg-no-repeat ${
+        className={`static h-full bg-bottom bg-contain bg-no-repeat ${
           theme === "dark"
             ? "bg-[url('../public/assets/dark.svg')]"
             : "bg-[url('../public/assets/light.svg')]"
         }`}
       >
-        <div className="p-2 sm:p-10">
-          <div
-            className="flex flex-col text-6xl sm:text-8xl align-start w-fit"
-            onMouseEnter={() => setCursorVariant("text")}
-            onMouseLeave={() => setCursorVariant("default")}
-          >
-            <TextAnimation text={"Sana Barilide"} />
-          </div>
+        <div
+          className="flex flex-col text-6xl sm:text-8xl align-start w-fit p-2"
+          onMouseEnter={() => setCursorVariant("text")}
+          onMouseLeave={() => setCursorVariant("default")}
+        >
+          <TextAnimation text={"Sana Barilide"} />
         </div>
-        <motion.div ref={constraintsRefY}>
-          <motion.div
-            className="bg-yellow rounded-full h-200 w-200 blur-lg fixed flex flex-col right-5 cursor-pointer"
-            animate={{ scale: 2 }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            drag
-            dragConstraints={constraintsRefY}
-          />
-        </motion.div>
-        <div className="p-2 sm:pl-12">
+
+        <motion.div
+          className="bg-yellow rounded-full h-[80px] w-[80px] blur-lg fixed flex flex-col right-20 cursor-pointer"
+          animate={{ scale: 2 }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+
+        <div className="p-2">
           <div className="flex flex-col text-md sm:text-xl align-start w-3/5">
             <p
               className="w-fit"
@@ -76,7 +70,7 @@ export const HomePage = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 right-0 p-2 sm:p-10">
+        <div className="absolute bottom-28 sm:bottom-24 right-6 sm:right-10">
           <div className="flex flex-col text-4xl sm:text-6xl">
             <motion.button
               whileHover={{ fontStyle: "italic", scale: 1.1 }}
@@ -98,19 +92,7 @@ export const HomePage = () => {
             </motion.button>
           </div>
         </div>
-        <motion.div ref={constraintsRefG}>
-          <motion.div
-            className="bg-green rounded-full h-58 w-58 blur-lg cursor-pointer"
-            animate={{ scale: 1.5 }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            drag
-            dragConstraints={constraintsRefG}
-          />
-        </motion.div>
+
         <CursorAnimation cursorVariant={cursorVariant} />
       </div>
     </motion.div>

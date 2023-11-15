@@ -33,7 +33,7 @@ export const TechAndEducation = () => {
               <div
                 onMouseEnter={textEnter}
                 onMouseLeave={textLeave}
-                className="underline decoration-1 flex justify-start"
+                className="underline decoration-1 flex justify-end"
               >
                 Teknikhögskolan
               </div>
@@ -41,7 +41,7 @@ export const TechAndEducation = () => {
           </div>
           <div className="col-span-2 mt-2">
             <p>
-              JavaScript, Java, HTML, CSS, Bootstrap, React, Java Spring, MySQL,
+              Javascript, Java, HTML, CSS, Bootstrap, React, Java Spring, MySQL,
               MongoDB, Node.js, REST API, Git, Figma
             </p>
           </div>

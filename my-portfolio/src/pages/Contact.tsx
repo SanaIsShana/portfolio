@@ -59,7 +59,7 @@ export const Contact = () => {
               <Link
                 to="javascript:void(0)"
                 onClick={() =>
-                  (window.location.href = "mailto:sanabarilad@gmail.com")
+                  (window.location.href = "mailto:sanabarilide@gmail.com")
                 }
               >
                 <motion.div
@@ -73,7 +73,7 @@ export const Contact = () => {
                       theme === "dark" ? " text-dustyPink" : " text-black"
                     }`}
                   >
-                    sanabarilad@gmail.com
+                    sanabarilide@gmail.com
                   </p>
                 </motion.div>
               </Link>

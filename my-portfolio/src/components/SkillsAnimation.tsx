@@ -29,7 +29,7 @@ export const SkillsAnimation = ({ text = [] }: TextAnimationProps) => {
       variants={sentence}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-2 sm:grid-cols-5 gap-1 border rounded-xl border-emerald-600 p-2 justify-items-center"
+      className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 border rounded-xl border-emerald-600 p-2 justify-items-center"
     >
       {text.map((char, index) => {
         return (

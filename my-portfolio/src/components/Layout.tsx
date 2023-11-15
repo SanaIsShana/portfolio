@@ -1,4 +1,4 @@
-import { FC, ReactNode, useContext } from "react"
+import { FC, ReactNode, useContext, useState } from "react"
 import { ThemeContext } from "../utils/themeContext"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
@@ -8,15 +8,21 @@ interface LayoutProp {
 }
 export const Layout: FC<LayoutProp> = ({ children }) => {
   const { theme } = useContext(ThemeContext)
+  const [toggle, setToggle] = useState(false)
+
   return (
-    <div
-      className={`flex flex-col fixed w-screen h-screen ${
-        theme === "dark" ? "bg-black text-dustyPink" : "bg-dustyPink text-black"
-      }`}
-    >
-      <Header />
-      {children}
-      <Footer />
-    </div>
+    <>
+      <div
+        className={`flex flex-col fixed w-screen h-screen ${
+          theme === "dark"
+            ? "bg-black text-dustyPink"
+            : "bg-dustyPink text-black"
+        }`}
+      >
+        <Header toggle={toggle} setToggle={setToggle} />
+        {children}
+        <Footer />
+      </div>
+    </>
   )
 }

@@ -50,38 +50,33 @@ export const Projects = () => {
         className="grid justify-items-center font-mono overflow-x-auto text-xs lg:text-lg h-full justify-center items-center"
       >
         {projects.map((project, index) => (
-          <>
-            <div
-              className="grid grid-cols-1 sm:grid-cols-2 w-full p-2 sm:w-4/6 sm:p-0 gap-3"
-              key={project.id}
-            >
-              <div className="flex items-center">
-                <ImageCarousel images={portfolioProjectImages} />
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 w-3/5 gap-2"
+            key={index}
+          >
+            <div className="items-center">
+              <ImageCarousel images={portfolioProjectImages} />
+            </div>
+            <div className="pl-1">
+              <div className="flex gap-2 items-center">
+                {project.title} - {project.time}
+                <Link to={{ pathname: `${project.link}` }} target="_blank">
+                  <FaGithubSquare
+                    size={30}
+                    className="cursor-pointer"
+                    onMouseEnter={textEnter}
+                    onMouseLeave={textLeave}
+                  />
+                </Link>
               </div>
-              <div className="pl-1">
-                <div className="flex gap-2 items-center">
-                  {project.title} - {project.time}
-                  <Link to={{ pathname: `${project.link}` }} target="_blank">
-                    <FaGithubSquare
-                      size={30}
-                      className="cursor-pointer"
-                      onMouseEnter={textEnter}
-                      onMouseLeave={textLeave}
-                    />
-                  </Link>
-                </div>
 
-                <div className="grid grid-cols-1 gap-1">
-                  {project.techList.map((tech, index) => (
-                    <p key={index}>- {tech}</p>
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 gap-1">
+                {project.techList.map((tech, index) => (
+                  <p key={index}>- {tech}</p>
+                ))}
               </div>
             </div>
-            {index == projects.length - 1 ? (
-              <div>More projects coming soon...</div>
-            ) : null}
-          </>
+          </div>
         ))}
       </div>
       <LinkAnimation

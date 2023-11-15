@@ -6,7 +6,7 @@ interface ImageCarouselProps {
   images: string[]
 }
 export const ImageCarousel = ({ images }: ImageCarouselProps) => {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(1)
 
   const previousSlide = () => {
     if (current === 0) setCurrent(images.length - 1)
@@ -19,17 +19,18 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
   }
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative pt-3">
       <div
         className="flex transition ease-in-out duration-700"
         style={{
           transform: `translateX(-${current * 100}%)`,
         }}
       >
-        {images.map((s) => {
+        {images.map((image, index) => {
           return (
             <img
-              src={s}
+              src={image}
+              key={index}
               className="border-dashed border-2 rounded-xl border-emerald-600 p-2"
             />
           )
@@ -43,15 +44,20 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
           whileTap={{ scale: 1.5 }}
           className="bg-white rounded-xl"
         >
-          <FaCircleChevronLeft size={25} />
+          {current !== 0 ? <FaCircleChevronLeft size={25} /> : null}
         </motion.button>
+
         <motion.button
           onClick={nextSlide}
           whileHover={{ scale: 1.5 }}
           whileTap={{ scale: 1.5 }}
           className="bg-white rounded-xl"
+          disabled={current === images.length - 1 ? true : false}
         >
-          <FaCircleChevronRight size={25} />
+          {" "}
+          {current !== images.length - 1 ? (
+            <FaCircleChevronRight size={25} />
+          ) : null}
         </motion.button>
       </div>
     </div>

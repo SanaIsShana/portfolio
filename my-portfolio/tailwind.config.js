@@ -21,7 +21,6 @@ export default {
         48: "48px",
         58: "58px",
         68: "68px",
-        200: "100px",
       },
       backgroundImage: {
         homeImg: "url('../public/assets/bg-img.svg')",
