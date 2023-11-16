@@ -1,0 +1,40 @@
+import { useEffect, useRef } from "react"
+import { ImageCarouselProps } from "./ImageCarousel"
+
+interface ImagePopupProp extends ImageCarouselProps {
+  expand: boolean
+  setExpand: (expand: boolean) => void
+}
+
+export const ImagePopup = ({ expand, setExpand, images }: ImagePopupProp) => {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const handler = (event: MouseEvent) => {
+      if (
+        expand &&
+        ref.current &&
+        !ref.current.contains(event.target as Node)
+      ) {
+        setExpand(false)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", handler)
+    }
+  }, [setExpand, expand])
+
+  return (
+    <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+      <div
+        ref={ref}
+        className="flex transition ease-in-out duration-700 relative w-auto h-auto p-10 max-w-3xl"
+      >
+        <img src={images[1]} className="p-2" onClick={() => setExpand(false)} />
+
+        <button onClick={() => setExpand(false)}></button>
+      </div>
+    </div>
+  )
+}
