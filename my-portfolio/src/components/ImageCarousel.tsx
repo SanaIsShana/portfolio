@@ -19,7 +19,7 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
   }
 
   return (
-    <div className="overflow-hidden relative pt-3">
+    <div className="overflow-hidden relative z-0">
       <div
         className="flex transition ease-in-out duration-700"
         style={{

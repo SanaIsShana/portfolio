@@ -1,27 +1,29 @@
+import { useContext, useEffect, useRef } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { navbarTabs } from "../utils/info"
 import { Variants, motion } from "framer-motion"
-import { useEffect, useRef } from "react"
 
-interface MenuProps {
+import { navMenuItems } from "../utils/info"
+import { ThemeContext } from "../utils/themeContext"
+interface NavMenuProps {
   toggle: boolean
   setToggle: (toggle: boolean) => void
 }
 
-export const NavMenu = ({ toggle, setToggle }: MenuProps) => {
+export const NavMenu = ({ toggle, setToggle }: NavMenuProps) => {
   const location = useLocation()
+  const { theme } = useContext(ThemeContext)
 
   const ref = useRef<HTMLDivElement>(null)
 
-  const variants: Variants = {
-    open: {
+  const navMenuVariant: Variants = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
       opacity: 1,
       transition: {
-        delay: 0.1,
+        staggerChildren: 0.2,
       },
-    },
-    closed: {
-      opacity: 0,
     },
   }
 
@@ -45,16 +47,23 @@ export const NavMenu = ({ toggle, setToggle }: MenuProps) => {
   return (
     <motion.div
       ref={ref}
-      className="fixed h-fit top-20 right-2 w-fit bg-red opacity-90 rounded-lg z-10"
-      variants={variants}
-      animate={toggle ? "open" : "closed"}
+      className={`fixed h-fit top-20 right-2 w-fit ${
+        theme === "dark" ? "bg-darkOlive" : "bg-red"
+      } opacity-80 rounded-lg z-10`}
+      variants={navMenuVariant}
+      initial="hidden"
+      animate="show"
       onBlur={() => setToggle(false)}
     >
       <ul className="flex flex-col items-center gap-3 p-5">
-        {navbarTabs.map((navItem, index) =>
-          location.pathname.includes(navItem) ? null : location.pathname ===
-              "/" && navItem === "home" ? null : (
-            <MenuItem key={index} navItem={navItem} setToggle={setToggle} />
+        {navMenuItems.map((navMenuItem, index) =>
+          location.pathname.includes(navMenuItem) ? null : location.pathname ===
+              "/" && navMenuItem === "home" ? null : (
+            <NavMenuItem
+              key={index}
+              navMenuItem={navMenuItem}
+              setToggle={setToggle}
+            />
           )
         )}
       </ul>
@@ -62,20 +71,26 @@ export const NavMenu = ({ toggle, setToggle }: MenuProps) => {
   )
 }
 
-interface ItemProp {
-  navItem: string
+interface NavMenuItemProps {
+  navMenuItem: string
   setToggle: (toggle: boolean) => void
 }
 
-const MenuItem = ({ navItem, setToggle }: ItemProp) => {
+const NavMenuItem = ({ navMenuItem, setToggle }: NavMenuItemProps) => {
+  const itemVariant: Variants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  }
+
   return (
     <motion.li
       whileHover={{ scale: 1.3 }}
       whileTap={{ scale: 0.75 }}
+      variants={itemVariant}
       className="font-header cursor-pointer"
       onClick={() => setToggle(false)}
     >
-      <Link to={`/${navItem}`}>{navItem.toUpperCase()} </Link>
+      <Link to={`/${navMenuItem}`}>{navMenuItem.toUpperCase()} </Link>
     </motion.li>
   )
 }

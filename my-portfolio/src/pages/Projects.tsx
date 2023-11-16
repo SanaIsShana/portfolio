@@ -1,26 +1,21 @@
 import { useContext, useRef, useState } from "react"
-import { ThemeContext } from "../utils/themeContext"
+import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import { BsArrowUpRightCircle } from "react-icons/bs"
+import { FaGithubSquare } from "react-icons/fa"
+
 import { portfolioProjectImages, projects } from "../utils/info"
 import { useMousePosition } from "../utils/useMousePosition"
-import { LinkAnimation } from "../components/LinkAnimation"
-import { BsArrowUpRightCircle } from "react-icons/bs"
-import { Link } from "react-router-dom"
-import { FaGithubSquare } from "react-icons/fa"
+import { ThemeContext } from "../utils/themeContext"
 import { ImageCarousel } from "../components/ImageCarousel"
+import { LinkAnimation } from "../components/LinkAnimation"
 
 export const Projects = () => {
   const { theme } = useContext(ThemeContext)
 
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
-  const textEnter = () => {
-    setCursorVariant("visible")
-  }
-  const textLeave = () => {
-    setCursorVariant("hidden")
-  }
 
   return (
     <motion.div
@@ -54,27 +49,27 @@ export const Projects = () => {
             className="grid grid-cols-1 sm:grid-cols-2 w-3/5 gap-2"
             key={index}
           >
-            <div className="items-center">
-              <ImageCarousel images={portfolioProjectImages} />
-            </div>
-            <div className="pl-1">
-              <div className="flex gap-2 items-center">
+            <div className="w-fit flex flex-col justify-self-center">
+              <div className="flex gap-2">
                 {project.title} - {project.time}
                 <Link to={{ pathname: `${project.link}` }} target="_blank">
                   <FaGithubSquare
                     size={30}
                     className="cursor-pointer"
-                    onMouseEnter={textEnter}
-                    onMouseLeave={textLeave}
+                    onMouseEnter={() => setCursorVariant("visible")}
+                    onMouseLeave={() => setCursorVariant("hidden")}
                   />
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 gap-1">
+              <div className="grid grid-cols gap-1">
                 {project.techList.map((tech, index) => (
                   <p key={index}>- {tech}</p>
                 ))}
               </div>
+            </div>
+            <div className="items-center">
+              <ImageCarousel images={portfolioProjectImages} />
             </div>
           </div>
         ))}

@@ -5,7 +5,7 @@ interface TextAnimationProps {
 }
 
 export const SkillsAnimation = ({ text = [] }: TextAnimationProps) => {
-  const sentence: Variants = {
+  const sentenceVariant: Variants = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
@@ -16,7 +16,7 @@ export const SkillsAnimation = ({ text = [] }: TextAnimationProps) => {
     },
   }
 
-  const letter: Variants = {
+  const letterVariant: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -26,19 +26,19 @@ export const SkillsAnimation = ({ text = [] }: TextAnimationProps) => {
 
   return (
     <motion.div
-      variants={sentence}
+      variants={sentenceVariant}
       initial="hidden"
       animate="visible"
       className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 border rounded-xl border-emerald-600 p-2 justify-items-center"
     >
-      {text.map((char, index) => {
+      {text.map((letter, index) => {
         return (
           <motion.div
-            key={char + index}
-            variants={letter}
+            key={letter + index}
+            variants={letterVariant}
             className="font-header text-xs lg:text-lg"
           >
-            {char}
+            {letter}
           </motion.div>
         )
       })}

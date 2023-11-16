@@ -1,18 +1,19 @@
 import { useContext, useRef, useState } from "react"
-import { ThemeContext } from "../utils/themeContext"
-import { Intro } from "../components/IntroSection"
-import { Experience } from "../components/ExperienceSection"
-import { tabs } from "../utils/info"
-import { useScrollProgress } from "../utils/useScrollProgress"
-import { TechAndEducation } from "../components/TechAndEducation"
 import { motion } from "framer-motion"
+
+import { pageNav } from "../utils/info"
+import { Intro } from "../components/IntroSection"
+import { EducationSection } from "../components/EducationSection"
+import { ExperienceSection } from "../components/ExperienceSection"
+import { ThemeContext } from "../utils/themeContext"
+import { useScrollProgress } from "../utils/useScrollProgress"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
 
-  const section1 = useRef<HTMLElement>(null)
-  const section2 = useRef<HTMLElement>(null)
-  const section3 = useRef<HTMLElement>(null)
+  const section1 = useRef<HTMLDivElement>(null)
+  const section2 = useRef<HTMLDivElement>(null)
+  const section3 = useRef<HTMLDivElement>(null)
   const [scrolledY, setScrolledY] = useState(0)
   const activeSection = useScrollProgress(scrolledY, [
     section1,
@@ -45,7 +46,7 @@ export const About = () => {
     >
       <nav className="flex p-1 top-0 w-full pl-2 sm:pl-5 pt-5 font-header">
         <ul className="flex justify-start text-xs lg:text-lg">
-          {tabs.map((item, index) => (
+          {pageNav.map((item, index) => (
             <li
               className={`${
                 activeSection === item
@@ -81,14 +82,14 @@ export const About = () => {
           id="education"
           className="flex h-full justify-center items-center"
         >
-          <TechAndEducation />
+          <EducationSection />
         </section>
         <section
           ref={section3}
           id="experience"
           className="flex h-full justify-center mb-20"
         >
-          <Experience />
+          <ExperienceSection />
         </section>
       </div>
     </motion.div>

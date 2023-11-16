@@ -1,5 +1,5 @@
-import { Variants, motion } from "framer-motion"
 import { FC, ReactNode } from "react"
+import { Variants, motion } from "framer-motion"
 
 interface LinkAnimationProps {
   mousePosition: {
@@ -14,7 +14,7 @@ export const LinkAnimation: FC<LinkAnimationProps> = ({
   mousePosition,
   cursorVariant,
   children,
-}: LinkAnimationProps) => {
+}) => {
   const variants: Variants = {
     hidden: {
       opacity: 0,

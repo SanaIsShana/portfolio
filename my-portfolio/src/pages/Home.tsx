@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+
 import { ThemeContext } from "../utils/themeContext"
 import { CursorAnimation } from "../components/CursorAnimation"
 import { TextAnimation } from "../components/TextAnimation"

@@ -1,11 +1,12 @@
 import { useContext, useRef, useState } from "react"
-import { ThemeContext } from "../utils/themeContext"
 import { Link } from "react-router-dom"
-import { LinkAnimation } from "../components/LinkAnimation"
-import { useMousePosition } from "../utils/useMousePosition"
-import { BsArrowUpRightCircle } from "react-icons/bs"
-import { HiOutlineMail } from "react-icons/hi"
 import { motion } from "framer-motion"
+import { HiOutlineMail } from "react-icons/hi"
+import { BsArrowUpRightCircle } from "react-icons/bs"
+
+import { ThemeContext } from "../utils/themeContext"
+import { useMousePosition } from "../utils/useMousePosition"
+import { LinkAnimation } from "../components/LinkAnimation"
 
 export const Contact = () => {
   const { theme } = useContext(ThemeContext)
@@ -57,7 +58,7 @@ export const Contact = () => {
             <div className="flex flex-col">
               <p>Email:</p>
               <Link
-                to="javascript:void(0)"
+                to="#"
                 onClick={() =>
                   (window.location.href = "mailto:sanabarilide@gmail.com")
                 }

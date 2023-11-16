@@ -1,17 +1,28 @@
-export const tabs = ["intro", "education", "experience"]
+export const pageNav: Array<string> = ["intro", "education", "experience"]
 
-export const navbarTabs = ["home", "about", "projects", "contact"]
+export const navMenuItems: Array<string> = [
+  "home",
+  "about",
+  "projects",
+  "contact",
+]
 
-export const skillsList = [
+export const skillsList: Array<string> = [
   "Typescript",
   "Javascript",
+  "Java",
   "React",
   "Angular",
-  "GraphQL",
   "HTML",
   "CSS",
+  "Node.js",
+  "GraphQL",
   "Bootstrap",
   "Tailwind",
+  "SQL",
+  "MongoDB",
+  "Figma",
+  "Git",
 ]
 
 export interface Project {
@@ -22,7 +33,32 @@ export interface Project {
   techList: string[]
 }
 
-export const experiences = [
+export interface Experience {
+  time: string
+  title: string
+  company: string
+  link: string
+  tech: string
+}
+
+export const projects: Array<Project> = [
+  {
+    id: "1",
+    time: "2023",
+    title: "Portfolio",
+    link: "//github.com/SanaIsShana/portfolio",
+    techList: [
+      "Typescript",
+      "React",
+      "Tailwind",
+      "HTML",
+      "CSS",
+      "Framer Motion",
+    ],
+  },
+]
+
+export const experiences: Array<Experience> = [
   {
     time: "June - August, 2023",
     title: "Frontend Developer (Summer Worker)",
@@ -46,28 +82,9 @@ export const experiences = [
   },
 ]
 
-export const projects: Array<Project> = [
-  {
-    id: "1",
-    time: "2023",
-    title: "Portfolio",
-    link: "//github.com/SanaIsShana/portfolio",
-    techList: [
-      "Typescript",
-      "React",
-      "Tailwind",
-      "CSS",
-      "HTML",
-      "Framer Motion",
-    ],
-  },
-]
-
 export const portfolioProjectImages = [
   "../../public/assets/p-1.png",
   "../../public/assets/p-2.png",
   "../../public/assets/p-3.png",
   "../../public/assets/p-4.png",
 ]
-
-

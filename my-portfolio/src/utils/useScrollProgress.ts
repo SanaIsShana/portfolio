@@ -2,7 +2,7 @@ import { RefObject, useLayoutEffect, useState } from "react"
 
 export const useScrollProgress = (
   scrollY: number,
-  sections: RefObject<HTMLElement>[]
+  sections: RefObject<HTMLDivElement>[]
 ) => {
   const [activeSection, setActiveSection] = useState("intro")
 

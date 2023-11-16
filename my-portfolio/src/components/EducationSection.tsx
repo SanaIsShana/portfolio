@@ -1,20 +1,16 @@
-import { useRef, useState } from "react"
+import { useContext, useRef, useState } from "react"
 import { Link } from "react-router-dom"
-import { useMousePosition } from "../utils/useMousePosition"
-import { LinkAnimation } from "./LinkAnimation"
 import { BsArrowUpRightCircle } from "react-icons/bs"
 
-export const TechAndEducation = () => {
+import { useMousePosition } from "../utils/useMousePosition"
+import { ThemeContext } from "../utils/themeContext"
+import { LinkAnimation } from "./LinkAnimation"
+
+export const EducationSection = () => {
+  const { theme } = useContext(ThemeContext)
   const ref = useRef(null)
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
-
-  const textEnter = () => {
-    setCursorVariant("visible")
-  }
-  const textLeave = () => {
-    setCursorVariant("hidden")
-  }
 
   return (
     <div className="p-1 sm:p-2 m-3 w-fit sm:w-2/5 font-mono">
@@ -31,8 +27,8 @@ export const TechAndEducation = () => {
               target="_blank"
             >
               <div
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
+                onMouseEnter={() => setCursorVariant("visible")}
+                onMouseLeave={() => setCursorVariant("hidden")}
                 className="underline decoration-1 flex justify-end"
               >
                 Teknikhögskolan
@@ -40,9 +36,13 @@ export const TechAndEducation = () => {
             </Link>
           </div>
           <div className="col-span-2 mt-2">
-            <p>
+            <p
+              className={`${
+                theme === "dark" ? "text-slate-400" : " text-gray-700"
+              }`}
+            >
               Javascript, Java, HTML, CSS, Bootstrap, React, Java Spring, MySQL,
-              MongoDB, Node.js, REST API, Git, Figma
+              MongoDB, Node.js, REST API, Git, Figma...
             </p>
           </div>
         </div>
