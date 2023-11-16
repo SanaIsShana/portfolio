@@ -25,7 +25,7 @@ export const Header = ({ toggle, setToggle }: HeaderProps) => {
 
   return (
     <>
-      <div className="sticky h-30 w-full p-4 mt-2 flex flex-row justify-between space-x-3 items-center ">
+      <div className="sticky h-30 w-full px-3 pt-4 sm:px-6 pb-3 mt-2 flex flex-row justify-between space-x-3 items-center">
         <motion.div
           whileHover={{
             scale: [1, 2, 2, 1, 1],
@@ -35,6 +35,7 @@ export const Header = ({ toggle, setToggle }: HeaderProps) => {
             scale: [1, 2, 2, 1, 1],
             rotate: [0, 0, 50, 50, 0],
           }}
+          className="pl-1 sm:pl-2"
         >
           <Link to="/">
             {theme === "dark" ? (
@@ -71,7 +72,7 @@ export const Header = ({ toggle, setToggle }: HeaderProps) => {
               />
             </motion.div>
           )}
-          <div className="flex p-1 sticky top-0 w-full font-header align-middle">
+          <div className="p-1 sticky top-0 w-full font-header align-middle">
             <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
               {!toggle ? (
                 <CgMenuGridO

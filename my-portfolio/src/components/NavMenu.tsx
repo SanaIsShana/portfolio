@@ -45,7 +45,7 @@ export const NavMenu = ({ toggle, setToggle }: MenuProps) => {
   return (
     <motion.div
       ref={ref}
-      className="fixed h-fit top-20 right-2 w-fit bg-red opacity-90 rounded-lg z-3"
+      className="fixed h-fit top-20 right-2 w-fit bg-red opacity-90 rounded-lg z-10"
       variants={variants}
       animate={toggle ? "open" : "closed"}
       onBlur={() => setToggle(false)}
