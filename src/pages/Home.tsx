@@ -20,12 +20,14 @@ export const HomePage = () => {
             : "bg-[url('../public/assets/light.svg')]"
         }`}
       >
-        <div
-          className="flex flex-col text-6xl sm:text-8xl align-start w-fit p-2 sm:p-4"
-          onMouseEnter={() => setCursorVariant("text")}
-          onMouseLeave={() => setCursorVariant("default")}
-        >
-          <TextAnimation text={"Sana Barilide"} />
+        <div className="flex flex-col text-6xl sm:text-8xl align-start w-fit p-2 sm:p-4">
+          <div
+            className="w-fit"
+            onMouseEnter={() => setCursorVariant("text")}
+            onMouseLeave={() => setCursorVariant("default")}
+          >
+            <TextAnimation text={"Sana Barilide"} />
+          </div>
           <p
             className="w-fit text-xs sm:text-xl align-start p-2 sm:p-4"
             onMouseEnter={() => setCursorVariant("text")}
@@ -38,7 +40,7 @@ export const HomePage = () => {
 
         <div className="flex flex-row relative justify-between">
           <motion.div
-            className="bg-yellow rounded-full h-[100px] w-[100px] blur-lg fixed left-20 cursor-pointer"
+            className="bg-yellow rounded-full h-[100px] w-[100px] blur-lg fixed left-20"
             animate={{ scale: 2 }}
             transition={{
               duration: 2,

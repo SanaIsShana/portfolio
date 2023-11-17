@@ -13,9 +13,10 @@ export interface ImageCarouselProps {
 }
 
 export const ImageCarousel = ({ images }: ImageCarouselProps) => {
-  const [current, setCurrent] = useState(1)
+  const [current, setCurrent] = useState(0)
   const [expand, setExpand] = useState(false)
   const { theme } = useContext(ThemeContext)
+  const [magnifyImage, setMagnifyImage] = useState<number>()
 
   const previousSlide = () => {
     if (current === 0) setCurrent(images.length - 1)
@@ -25,6 +26,11 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const nextSlide = () => {
     if (current === images.length - 1) setCurrent(0)
     else setCurrent(current + 1)
+  }
+
+  const handleMagnifierClicked = () => {
+    setExpand(true)
+    setMagnifyImage(current)
   }
 
   return (
@@ -81,13 +87,17 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 1.2 }}
           >
-            <FaMagnifyingGlass onClick={() => setExpand(true)} />
+            <FaMagnifyingGlass onClick={handleMagnifierClicked} />
           </motion.button>
         </div>
       </div>
 
       {expand ? (
-        <MagnifiedImage images={images} setExpand={setExpand} expand={expand} />
+        <MagnifiedImage
+          image={images[magnifyImage ?? -1]}
+          setExpand={setExpand}
+          expand={expand}
+        />
       ) : null}
     </>
   )

@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react"
-import { ImageCarouselProps } from "./ImageCarousel"
 
-interface MagnifiedImageProps extends ImageCarouselProps {
+interface MagnifiedImageProps {
   expand: boolean
   setExpand: (expand: boolean) => void
+  image: string
 }
 
 export const MagnifiedImage = ({
   expand,
   setExpand,
-  images,
+  image,
 }: MagnifiedImageProps) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -35,7 +35,7 @@ export const MagnifiedImage = ({
         ref={ref}
         className="flex transition ease-in-out duration-700 relative w-auto h-auto p-10 max-w-3xl cursor-pointer"
       >
-        <img src={images[1]} className="p-2" onClick={() => setExpand(false)} />
+        <img src={image} className="p-2" onClick={() => setExpand(false)} />
 
         <button onClick={() => setExpand(false)}></button>
       </div>
