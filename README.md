@@ -21,7 +21,7 @@ I enjoy the process of designing and coding this project.
 
 ## Built With
 
-TypeScript, React, TailwindCSS, Framer Motion, Vite, React Router, React Icons                       ([Go to the top](#developer-portfolio))
+TypeScript, React, TailwindCSS, Framer Motion, Vite, React Router, React Icons                     ⬆️ ([Go to the top](#developer-portfolio))
 
 ![Static Badge](https://img.shields.io/badge/typescript-yellow?logo=typescript&labelColor=black&link=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FTypeScript)
 ![npm](https://img.shields.io/npm/v/typescript?color=yellow&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Ftypescript)
@@ -67,7 +67,7 @@ npm run dev
 ## Contact
 I am always up for learning new things and exchaning ideas, if you have any please email me 😃 => ✉️ sanabarilide@gmail.com
 
-[Go to the top](#developer-portfolio)
+⬆️ [Go to the top](#developer-portfolio)
 
 
 
