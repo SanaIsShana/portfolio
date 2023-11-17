@@ -1,30 +1,27 @@
-# About The Project 
+# Developer Portfolio
 
 # ![Static Badge](https://img.shields.io/badge/typescript-yellow?style=for-the-badge&logo=typescript&labelColor=black) ![Static Badge](https://img.shields.io/badge/react-blue?style=for-the-badge&logo=react&labelColor=black) ![Static Badge](https://img.shields.io/badge/vite-pink?style=for-the-badge&logo=vite&labelColor=black)  ![Static Badge](https://img.shields.io/badge/tailwindcss-purple?style=for-the-badge&logo=tailwindcss&labelColor=black) ![Static Badge](https://img.shields.io/badge/react_router-red?style=for-the-badge&logo=react-router&labelColor=black) ![Static Badge](https://img.shields.io/badge/framer_motion-white?style=for-the-badge&logo=framer&labelColor=black) ![Static Badge](https://img.shields.io/badge/react_icons-orange?style=for-the-badge&logo=react&logoColor=red&labelColor=black)
 
+## About The Project 
 Hi!, this is my portfolio website. 
 I got inspriation for the design of main-page from my childhood memory.
 I enjoy the process of designing and coding this project.
 
-## Table of Contents
-- [Design](#design)
-- [Built With](#built-with)
-- [Getting Started](#getting-started)
-- [Contact](#contact)
-
-
-## Design
-
+### Home Page Design
 - Dark mode
 <img width="1438" alt="Screenshot 2023-11-17 at 22 10 47" src="https://github.com/SanaIsShana/portfolio/assets/72435416/2e548fc5-d9f4-4046-b208-4fc966062ed3">
 
 - Light mode
 <img width="1439" alt="Screenshot 2023-11-17 at 22 11 17" src="https://github.com/SanaIsShana/portfolio/assets/72435416/d8ac2265-68fe-4bae-9716-d3f94014d1c4">
 
+## Table of Contents
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Contact](#contact)
 
 ## Built With
 
-TypeScript, React, TailwindCSS, Framer Motion, Vite, React Router, React Icons
+TypeScript, React, TailwindCSS, Framer Motion, Vite, React Router, React Icons                       ([Go to the top](#developer-portfolio))
 
 ![Static Badge](https://img.shields.io/badge/typescript-yellow?logo=typescript&labelColor=black&link=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FTypeScript)
 ![npm](https://img.shields.io/npm/v/typescript?color=yellow&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Ftypescript)
@@ -48,7 +45,7 @@ TypeScript, React, TailwindCSS, Framer Motion, Vite, React Router, React Icons
 ![npm](https://img.shields.io/npm/v/vite?color=pink&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fvite)
 
 
-## Getting Started
+## Getting Started                  
 ### Prerequiesties
 - Node.js >=16.0.0
 - npm
@@ -70,8 +67,7 @@ npm run dev
 ## Contact
 I am always up for learning new things and exchaning ideas, if you have any please email me 😃 => ✉️ sanabarilide@gmail.com
 
-
-
+[Go to the top](#developer-portfolio)
 
 
 
