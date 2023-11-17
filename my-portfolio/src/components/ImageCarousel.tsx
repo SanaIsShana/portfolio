@@ -5,7 +5,7 @@ import {
   FaCircleChevronRight,
   FaMagnifyingGlass,
 } from "react-icons/fa6"
-import { ImagePopup } from "./ImagePopup"
+import { MagnifiedImage } from "./MagnifiedImage"
 import { ThemeContext } from "../utils/themeContext"
 
 export interface ImageCarouselProps {
@@ -87,7 +87,7 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
       </div>
 
       {expand ? (
-        <ImagePopup images={images} setExpand={setExpand} expand={expand} />
+        <MagnifiedImage images={images} setExpand={setExpand} expand={expand} />
       ) : null}
     </>
   )

@@ -5,34 +5,14 @@ import { motion } from "framer-motion"
 import { ThemeContext } from "../utils/themeContext"
 import { CursorAnimation } from "../components/CursorAnimation"
 import { TextAnimation } from "../components/TextAnimation"
+import { PageTransition } from "../components/PageTransition"
 
 export const HomePage = () => {
   const { theme } = useContext(ThemeContext)
   const [cursorVariant, setCursorVariant] = useState("default")
 
   return (
-    <motion.div
-      className={`flex border-solid border-4 rounded-lg ${
-        theme === "dark" ? "border-dustyPink" : "border-black"
-      } m-3 sm:m-7 font-header flex-col h-3/4`}
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          ease: "linear",
-          duration: 2,
-          x: { duration: 1 },
-        },
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          ease: "linear",
-          duration: 2,
-          x: { duration: 1 },
-        },
-      }}
-    >
+    <PageTransition cssStyle="font-header">
       <div
         className={`grid grid-flow-row h-full bg-bottom bg-contain bg-no-repeat ${
           theme === "dark"
@@ -90,6 +70,6 @@ export const HomePage = () => {
 
         <CursorAnimation cursorVariant={cursorVariant} />
       </div>
-    </motion.div>
+    </PageTransition>
   )
 }

@@ -1,30 +1,40 @@
 import { motion } from "framer-motion"
-import { useContext } from "react"
+import { ReactNode, useContext } from "react"
 import { ThemeContext } from "../utils/themeContext"
 
-export const PageTransition = () => {
-  const { theme } = useContext(ThemeContext)
+interface PageTransitionProps {
+  children: ReactNode
+  cssStyle?: string
+}
 
+export const PageTransition = ({ children, cssStyle }: PageTransitionProps) => {
+  const { theme } = useContext(ThemeContext)
   return (
     <>
       <motion.div
-        className={`fixed top-0 left-0 w-full h-screen origin-bottom ${
-          theme === "dark" ? "bg-dustyPink" : "bg-black"
-        }`}
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 0 }}
-        exit={{ scale: 1 }}
-        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
-      />
-      <motion.div
-        className={`fixed top-0 left-0 w-full h-screen origin-top ${
-          theme === "dark" ? "bg-dustyPink" : "bg-black"
-        }`}
-        initial={{ scaleY: 1 }}
-        animate={{ scaleY: 0 }}
-        exit={{ scale: 1 }}
-        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
-      />
+        className={`flex flex-col border-solid border-4 rounded-lg ${
+          theme === "dark" ? "border-dustyPink" : "border-black"
+        } m-3 sm:m-7 h-3/4 ${cssStyle}`}
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: {
+            ease: "linear",
+            duration: 2,
+            x: { duration: 1 },
+          },
+        }}
+        exit={{
+          opacity: 0,
+          transition: {
+            ease: "linear",
+            duration: 2,
+            x: { duration: 1 },
+          },
+        }}
+      >
+        {children}
+      </motion.div>
     </>
   )
 }

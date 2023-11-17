@@ -1,12 +1,16 @@
 import { useEffect, useRef } from "react"
 import { ImageCarouselProps } from "./ImageCarousel"
 
-interface ImagePopupProp extends ImageCarouselProps {
+interface MagnifiedImageProps extends ImageCarouselProps {
   expand: boolean
   setExpand: (expand: boolean) => void
 }
 
-export const ImagePopup = ({ expand, setExpand, images }: ImagePopupProp) => {
+export const MagnifiedImage = ({
+  expand,
+  setExpand,
+  images,
+}: MagnifiedImageProps) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const handler = (event: MouseEvent) => {
@@ -29,7 +33,7 @@ export const ImagePopup = ({ expand, setExpand, images }: ImagePopupProp) => {
     <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <div
         ref={ref}
-        className="flex transition ease-in-out duration-700 relative w-auto h-auto p-10 max-w-3xl"
+        className="flex transition ease-in-out duration-700 relative w-auto h-auto p-10 max-w-3xl cursor-pointer"
       >
         <img src={images[1]} className="p-2" onClick={() => setExpand(false)} />
 

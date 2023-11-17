@@ -4,7 +4,7 @@ import { Variants, motion } from "framer-motion"
 import { AiFillSmile } from "react-icons/ai"
 import { BsArrowUpRightCircle } from "react-icons/bs"
 
-import Resume from "../../public/assets/Shana-CV.pdf"
+import Resume from "../../public/assets/Sana-resume.pdf"
 import { experiences } from "../utils/info"
 import { useMousePosition } from "../utils/useMousePosition"
 import { ThemeContext } from "../utils/themeContext"

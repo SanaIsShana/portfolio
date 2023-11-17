@@ -1,5 +1,4 @@
 import { useContext, useRef, useState } from "react"
-import { motion } from "framer-motion"
 
 import { pageNav } from "../utils/info"
 import { Intro } from "../components/IntroSection"
@@ -7,6 +6,7 @@ import { EducationSection } from "../components/EducationSection"
 import { ExperienceSection } from "../components/ExperienceSection"
 import { ThemeContext } from "../utils/themeContext"
 import { useScrollProgress } from "../utils/useScrollProgress"
+import { PageTransition } from "../components/PageTransition"
 
 export const About = () => {
   const { theme } = useContext(ThemeContext)
@@ -22,28 +22,7 @@ export const About = () => {
   ])
 
   return (
-    <motion.div
-      className={`flex flex-col border-solid border-4 rounded-lg ${
-        theme === "dark" ? "border-dustyPink" : "border-black"
-      } m-3 sm:m-7 h-3/4`}
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          ease: "linear",
-          duration: 2,
-          x: { duration: 1 },
-        },
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          ease: "linear",
-          duration: 2,
-          x: { duration: 1 },
-        },
-      }}
-    >
+    <PageTransition>
       <nav className="flex p-1 top-0 w-full pl-2 sm:pl-5 pt-5 font-header">
         <ul className="flex justify-start text-xs lg:text-lg">
           {pageNav.map((item, index) => (
@@ -92,6 +71,6 @@ export const About = () => {
           <ExperienceSection />
         </section>
       </div>
-    </motion.div>
+    </PageTransition>
   )
 }
