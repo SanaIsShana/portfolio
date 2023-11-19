@@ -9,10 +9,12 @@ I enjoy the process of designing and coding this project.
 
 ### Home Page Design
 - Dark mode
-<img width="1438" alt="Screenshot 2023-11-17 at 22 10 47" src="https://github.com/SanaIsShana/portfolio/assets/72435416/2e548fc5-d9f4-4046-b208-4fc966062ed3">
+<img width="1437" alt="p-1" src="https://github.com/SanaIsShana/portfolio/assets/72435416/e486164d-36f9-447a-b730-f43438c661f0">
+
 
 - Light mode
-<img width="1439" alt="Screenshot 2023-11-17 at 22 11 17" src="https://github.com/SanaIsShana/portfolio/assets/72435416/d8ac2265-68fe-4bae-9716-d3f94014d1c4">
+<img width="1435" alt="p-2" src="https://github.com/SanaIsShana/portfolio/assets/72435416/85a872a8-0a3c-4429-a08d-57c500dfaf69">
+
 
 ## Table of Contents
 - [Built With](#built-with)
