@@ -12,7 +12,7 @@ export const PageTransition = ({ children, cssStyle }: PageTransitionProps) => {
   return (
     <>
       <motion.main
-        className={`h-full flex flex-col border-solid border-4 rounded-lg ${
+        className={`h-4/5 flex flex-col border-solid border-4 rounded-lg ${
           theme === "dark" ? "border-dustyPink" : "border-black"
         } m-3 sm:m-5 ${cssStyle}`}
         initial={{ opacity: 0 }}

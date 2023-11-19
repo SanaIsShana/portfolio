@@ -48,7 +48,7 @@ export const HomePage = () => {
               repeatType: "reverse",
             }}
           />
-          <div className="absolute bottom-6 right-0 p-2 sm:p-4 flex flex-col text-4xl sm:text-6xl">
+          <div className="absolute bottom-8 right-0 p-2 sm:p-4 flex flex-col text-4xl sm:text-6xl">
             <motion.button
               whileHover={{ fontStyle: "italic", scale: 1.1 }}
               whileTap={{ scale: 1.5 }}
