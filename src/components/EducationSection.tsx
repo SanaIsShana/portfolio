@@ -1,5 +1,4 @@
 import { useContext, useRef, useState } from "react"
-import { Link } from "react-router-dom"
 import { BsArrowUpRightCircle } from "react-icons/bs"
 
 import { useMousePosition } from "../utils/useMousePosition"
@@ -21,13 +20,7 @@ export const EducationSection = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 lg:gap-2 mt-2">
             <p> Fullstack development</p>
-            <Link
-              ref={ref}
-              to={{
-                pathname: "https://teknikhogskolan.se/",
-              }}
-              target="_blank"
-            >
+            <a ref={ref} href="https://teknikhogskolan.se/" target="_blank">
               <div
                 onMouseEnter={() => setCursorVariant("visible")}
                 onMouseLeave={() => setCursorVariant("hidden")}
@@ -35,7 +28,7 @@ export const EducationSection = () => {
               >
                 Teknikhögskolan
               </div>
-            </Link>
+            </a>
           </div>
           <div className="col-span-2 mt-2">
             <p

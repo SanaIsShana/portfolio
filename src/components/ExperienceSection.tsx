@@ -1,5 +1,4 @@
 import { useContext, useRef, useState } from "react"
-import { Link } from "react-router-dom"
 import { Variants, motion } from "framer-motion"
 import { AiFillSmile } from "react-icons/ai"
 import { BsArrowUpRightCircle } from "react-icons/bs"
@@ -37,7 +36,7 @@ export const ExperienceSection = () => {
           <div className="pt-2 pb-2" key={index}>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-0 lg:gap-2">
               <div>{item.time}</div>
-              <Link ref={ref} to={{ pathname: `${item.link}` }} target="_blank">
+              <a ref={ref} href={`${item.link}`} target="_blank">
                 <div
                   onMouseEnter={() => setCursorVariant("visible")}
                   onMouseLeave={() => setCursorVariant("hidden")}
@@ -45,7 +44,7 @@ export const ExperienceSection = () => {
                 >
                   {item.company}
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="col-span-2">{item.title}</div>
             <div
