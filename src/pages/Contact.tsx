@@ -62,7 +62,7 @@ export const Contact = () => {
             <div className="flex flex-col justify-center">
               <p>Other:</p>
               <Link
-                to={{ pathname: "//www.linkedin.com/in/shana-shana" }}
+                to={{ pathname: "https://www.linkedin.com/in/shana-shana" }}
                 target="_blank"
               >
                 <motion.div
@@ -81,7 +81,7 @@ export const Contact = () => {
                 </motion.div>
               </Link>
               <Link
-                to={{ pathname: "//github.com/SanaIsShana" }}
+                to={{ pathname: "https://github.com/SanaIsShana" }}
                 target="_blank"
               >
                 <motion.div

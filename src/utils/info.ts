@@ -46,7 +46,7 @@ export const projects: Array<Project> = [
     id: "1",
     time: "2023",
     title: "Portfolio",
-    link: "//github.com/SanaIsShana/portfolio",
+    link: "https://www.github.com/SanaIsShana/portfolio",
     techList: [
       "Typescript",
       "React",
