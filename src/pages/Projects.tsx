@@ -1,5 +1,4 @@
 import { useRef, useState } from "react"
-import { Link } from "react-router-dom"
 import { BsArrowUpRightCircle } from "react-icons/bs"
 import { FaGithubSquare } from "react-icons/fa"
 
