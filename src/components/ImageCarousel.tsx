@@ -8,11 +8,14 @@ import {
 import { MagnifiedImage } from "./MagnifiedImage"
 import { ThemeContext } from "../utils/themeContext"
 
-export interface ImageCarouselProps {
-  images: string[]
-}
+import pOneImage1 from "../../public/assets/p-1.png"
+import pOneImage2 from "../../public/assets/p-2.png"
+import pOneImage3 from "../../public/assets/p-3.png"
+import pOneImage4 from "../../public/assets/p-4.png"
 
-export const ImageCarousel = ({ images }: ImageCarouselProps) => {
+export const images = [pOneImage1, pOneImage2, pOneImage3, pOneImage4]
+
+export const ImageCarousel = () => {
   const [current, setCurrent] = useState(0)
   const [expand, setExpand] = useState(false)
   const { theme } = useContext(ThemeContext)

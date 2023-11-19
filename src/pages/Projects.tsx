@@ -8,12 +8,6 @@ import { useMousePosition } from "../utils/useMousePosition"
 import { ImageCarousel } from "../components/ImageCarousel"
 import { LinkAnimation } from "../components/LinkAnimation"
 import { PageTransition } from "../components/PageTransition"
-import pOneImage1 from "../../public/assets/p-1.png"
-import pOneImage2 from "../../public/assets/p-2.png"
-import pOneImage3 from "../../public/assets/p-3.png"
-import pOneImage4 from "../../public/assets/p-4.png"
-
-export const portfolioProjectImages = [pOneImage1, pOneImage2, pOneImage3, pOneImage4]
 
 export const Projects = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -50,7 +44,7 @@ export const Projects = () => {
               </div>
             </div>
             <div className="items-center">
-              <ImageCarousel images={portfolioProjectImages} />
+              <ImageCarousel />
             </div>
           </div>
         ))}
