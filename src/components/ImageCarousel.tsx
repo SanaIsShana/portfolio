@@ -55,7 +55,7 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
 
         <div
           className={`absolute top-0 h-full w-full ${
-            theme === "dark" ? "text-black" : "text-white"
+            theme === "dark" ? "text-black" : "text-dustyPink"
           }`}
         >
           <div className="absolute top-0 h-full w-full justify-between items-center flex px-2">
@@ -63,7 +63,9 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
               onClick={previousSlide}
               whileHover={{ scale: 1.5 }}
               whileTap={{ scale: 1.5 }}
-              className="bg-red rounded-xl"
+              className={`${
+                theme === "dark" ? "bg-white" : "bg-black"
+              } rounded-xl`}
             >
               {current !== 0 ? <FaCircleChevronLeft size={25} /> : null}
             </motion.button>
@@ -72,7 +74,9 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
               onClick={nextSlide}
               whileHover={{ scale: 1.5 }}
               whileTap={{ scale: 1.5 }}
-              className="bg-red rounded-xl"
+              className={`${
+                theme === "dark" ? "bg-white" : "bg-black"
+              } rounded-xl`}
               disabled={current === images.length - 1 ? true : false}
             >
               {current !== images.length - 1 ? (
@@ -81,9 +85,9 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
             </motion.button>
           </div>
           <motion.button
-            className={`absolute bottom-1 right-1 p-2  ${
-              theme === "dark" ? "bg-black" : "bg-white"
-            } rounded-xl text-red`}
+            className={`absolute bottom-1 right-1 p-1  ${
+              theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+            } rounded-md `}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 1.2 }}
           >

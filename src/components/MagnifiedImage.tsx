@@ -33,7 +33,7 @@ export const MagnifiedImage = ({
     <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <div
         ref={ref}
-        className="flex transition ease-in-out duration-700 relative w-auto h-auto p-10 max-w-3xl cursor-pointer"
+        className="flex transition ease-in-out duration-700 relative w-auto h-auto p-10 max-w-5xl cursor-zoom-out"
       >
         <img src={image} className="p-2" onClick={() => setExpand(false)} />
 
