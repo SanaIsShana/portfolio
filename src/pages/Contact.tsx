@@ -61,10 +61,7 @@ export const Contact = () => {
             </div>
             <div className="flex flex-col justify-center">
               <p>Other:</p>
-              <Link
-                to={{ pathname: "https://www.linkedin.com/in/shana-shana" }}
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/shana-shana" target="_blank">
                 <motion.div
                   className="text-md sm:text-lg cursor-pointer"
                   onMouseEnter={() => textEnter("arrow")}
@@ -79,11 +76,8 @@ export const Contact = () => {
                     LinkedIn
                   </p>
                 </motion.div>
-              </Link>
-              <Link
-                to={{ pathname: "https://github.com/SanaIsShana" }}
-                target="_blank"
-              >
+              </a>
+              <a href="https://github.com/SanaIsShana" target="_blank">
                 <motion.div
                   className="text-md sm:text-lg cursor-pointer "
                   onMouseEnter={() => textEnter("arrow")}
@@ -98,7 +92,7 @@ export const Contact = () => {
                     Github
                   </p>
                 </motion.div>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -28,13 +28,13 @@ export const Projects = () => {
             <div className="w-fit grid grid-col justify-self-center content-middle">
               <div className="flex gap-2 items-end">
                 {project.title} - {project.time}
-                <Link to={{ pathname: `${project.link}` }} target="_blank">
+                <a href={`${project.link}`} target="_blank">
                   <FaGithubSquare
                     className={`cursor-pointer h-5 w-5 lg:h-8 lg:w-8`}
                     onMouseEnter={() => setCursorVariant("visible")}
                     onMouseLeave={() => setCursorVariant("hidden")}
                   />
-                </Link>
+                </a>
               </div>
 
               <div className="grid grid-cols gap-1">
