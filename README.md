@@ -1,4 +1,4 @@
-# Developer Portfolio
+# My Developer Portfolio
 
 # ![Static Badge](https://img.shields.io/badge/typescript-yellow?style=for-the-badge&logo=typescript&labelColor=black) ![Static Badge](https://img.shields.io/badge/react-blue?style=for-the-badge&logo=react&labelColor=black) ![Static Badge](https://img.shields.io/badge/vite-pink?style=for-the-badge&logo=vite&labelColor=black)  ![Static Badge](https://img.shields.io/badge/tailwindcss-purple?style=for-the-badge&logo=tailwindcss&labelColor=black) ![Static Badge](https://img.shields.io/badge/react_router-red?style=for-the-badge&logo=react-router&labelColor=black) ![Static Badge](https://img.shields.io/badge/framer_motion-white?style=for-the-badge&logo=framer&labelColor=black) ![Static Badge](https://img.shields.io/badge/react_icons-orange?style=for-the-badge&logo=react&logoColor=red&labelColor=black)
 
