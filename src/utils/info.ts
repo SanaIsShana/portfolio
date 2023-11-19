@@ -63,28 +63,21 @@ export const experiences: Array<Experience> = [
     time: "June - August, 2023",
     title: "Frontend Developer (Summer Worker)",
     company: "Axis Communications",
-    link: "//www.axis.com/",
+    link: "https://www.axis.com/",
     tech: "Typescript, React, GraphQL, Styled-components, CSS, HTML, Git",
   },
   {
     time: "January - May, 2023",
     title: "Frontend Developer (Intern)",
     company: "Axis Communications",
-    link: "//www.axis.com/",
+    link: "https://www.axis.com/",
     tech: "Typescript, React, GraphQL, Styled-components, CSS, HTML, Git",
   },
   {
     time: "April - August, 2022",
     title: "Fullstack Developer (Intern)",
     company: "Bookboost",
-    link: "//www.bookboost.io/",
+    link: "https://www.bookboost.io/",
     tech: "Typescript, Angular, Bootstrap, CSS, HTML, PostgreSQL, PHP, Laravel",
   },
-]
-
-export const portfolioProjectImages = [
-  "../../public/assets/p-1.png",
-  "../../public/assets/p-2.png",
-  "../../public/assets/p-3.png",
-  "../../public/assets/p-4.png",
 ]

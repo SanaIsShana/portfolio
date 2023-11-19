@@ -3,11 +3,18 @@ import { Link } from "react-router-dom"
 import { BsArrowUpRightCircle } from "react-icons/bs"
 import { FaGithubSquare } from "react-icons/fa"
 
-import { portfolioProjectImages, projects } from "../utils/info"
+import { projects } from "../utils/info"
 import { useMousePosition } from "../utils/useMousePosition"
 import { ImageCarousel } from "../components/ImageCarousel"
 import { LinkAnimation } from "../components/LinkAnimation"
 import { PageTransition } from "../components/PageTransition"
+
+export const portfolioProjectImages = [
+  "./../../public/assets/p-1.png",
+  "./../../public/assets/p-2.png",
+  "./../../public/assets/p-3.png",
+  "./../../public/assets/p-4.png",
+]
 
 export const Projects = () => {
   const ref = useRef<HTMLDivElement>(null)

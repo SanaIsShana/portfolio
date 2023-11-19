@@ -23,7 +23,9 @@ export const EducationSection = () => {
             <p> Fullstack development</p>
             <Link
               ref={ref}
-              to={{ pathname: "//teknikhogskolan.se/" }}
+              to={{
+                pathname: "https://teknikhogskolan.se/",
+              }}
               target="_blank"
             >
               <div
