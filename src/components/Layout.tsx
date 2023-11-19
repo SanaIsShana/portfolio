@@ -12,7 +12,7 @@ export const Layout: FC<LayoutProp> = ({ children }) => {
 
   return (
     <div
-      className={`flex flex-col h-screen overflow-y-auto ${
+      className={`flex flex-col h-screen ${
         theme === "dark" ? "bg-black text-dustyPink" : "bg-dustyPink text-black"
       }`}
     >
