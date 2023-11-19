@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 export const Footer = () => {
   return (
-    <div className="sticky bottom-0 w-full flex flex-row justify-center space-x-2">
+    <div className="sticky h-10 w-full flex flex-row justify-center space-x-2 pb-2">
       <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
         <Link
           to={{ pathname: "//www.linkedin.com/in/shana-shana" }}

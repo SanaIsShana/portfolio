@@ -11,6 +11,7 @@ export default {
         red: "#dd9787",
         green: "#a6c48a",
         yellow: "#ffe599",
+        darkRed: "#7a3333",
       },
       fontFamily: {
         header: ["Calistoga", "cursive"],

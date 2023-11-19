@@ -25,7 +25,7 @@ export const Header = ({ toggle, setToggle }: HeaderProps) => {
 
   return (
     <>
-      <div className="sticky h-30 w-full px-3 pt-4 sm:px-6 pb-3 mt-2 flex flex-row justify-between space-x-3 items-center">
+      <div className="sticky h-30 w-full px-2 pt-4 sm:px-6 pb-3 mt-2 flex flex-row justify-between space-x-3 items-center">
         <motion.div
           whileHover={{
             scale: [1, 2, 2, 1, 1],

@@ -11,18 +11,14 @@ export const Layout: FC<LayoutProp> = ({ children }) => {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <>
-      <div
-        className={`flex flex-col fixed w-screen h-screen ${
-          theme === "dark"
-            ? "bg-black text-dustyPink"
-            : "bg-dustyPink text-black"
-        }`}
-      >
-        <Header toggle={toggle} setToggle={setToggle} />
-        {children}
-        <Footer />
-      </div>
-    </>
+    <div
+      className={`flex flex-col h-screen overflow-y-auto ${
+        theme === "dark" ? "bg-black text-dustyPink" : "bg-dustyPink text-black"
+      }`}
+    >
+      <Header toggle={toggle} setToggle={setToggle} />
+      {children}
+      <Footer />
+    </div>
   )
 }

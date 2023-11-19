@@ -40,7 +40,7 @@ export const HomePage = () => {
 
         <div className="flex flex-row relative justify-between">
           <motion.div
-            className="bg-yellow rounded-full h-[100px] w-[100px] blur-lg fixed left-20"
+            className="bg-yellow rounded-full h-[50px] w-[50px] sm:h-[100px] sm:w-[100px] blur-lg fixed left-20"
             animate={{ scale: 2 }}
             transition={{
               duration: 2,
@@ -48,7 +48,7 @@ export const HomePage = () => {
               repeatType: "reverse",
             }}
           />
-          <div className="absolute bottom-0 right-0 p-2 sm:p-4 flex flex-col text-4xl sm:text-6xl">
+          <div className="absolute bottom-6 right-0 p-2 sm:p-4 flex flex-col text-4xl sm:text-6xl">
             <motion.button
               whileHover={{ fontStyle: "italic", scale: 1.1 }}
               whileTap={{ scale: 1.5 }}
