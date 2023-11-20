@@ -11,7 +11,7 @@ export const PageTransition = ({ children, cssStyle }: PageTransitionProps) => {
   const { theme } = useContext(ThemeContext)
   return (
     <motion.main
-      className={`flex flex-col flex-grow border-solid border-4 rounded-lg ${
+      className={`flex flex-col h-3/5 flex-grow border-solid border-4 rounded-lg ${
         theme === "dark" ? "border-dustyPink" : "border-black"
       } m-3 sm:m-5 ${cssStyle}`}
       initial={{ opacity: 0 }}
