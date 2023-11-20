@@ -9,8 +9,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    env: 
-      DEV: DEV
+    environment: 
+      name: DEV
 
     steps:
       - name: Checkout repo
@@ -36,8 +36,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    env: 
-      DEV: DEV
+    environment: 
+      name: DEV
 
     steps:
       - name: Download artifact

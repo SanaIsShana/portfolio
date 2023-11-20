@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { HashRouter } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import { ThemeContext } from "./utils/themeContext"
 import { AnimatedRoutes } from "./components/AnimatedRoutes"
 
@@ -14,9 +14,9 @@ export const App = () => {
   return (
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <HashRouter>
+        <BrowserRouter basename="/portfolio">
           <AnimatedRoutes />
-        </HashRouter>
+        </BrowserRouter>
       </ThemeContext.Provider>
     </>
   )
