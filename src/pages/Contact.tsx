@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { HiOutlineMail } from "react-icons/hi"
@@ -8,6 +8,7 @@ import { ThemeContext } from "../utils/themeContext"
 import { useMousePosition } from "../utils/useMousePosition"
 import { LinkAnimation } from "../components/LinkAnimation"
 import { PageTransition } from "../components/PageTransition"
+import { useCopyToClipboard } from "../utils/useCopyToClipboard"
 
 export const Contact = () => {
   const { theme } = useContext(ThemeContext)
@@ -15,6 +16,16 @@ export const Contact = () => {
   const mousePosition = useMousePosition(ref)
   const [cursorVariant, setCursorVariant] = useState("hidden")
   const [gifVariant, setGifVariant] = useState("")
+  const [, copyEmail] = useCopyToClipboard()
+  const [copyClicked, setCopyClicked] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setCopyClicked(false)
+    }, 3000)
+
+    return () => clearTimeout(timeout)
+  }, [copyClicked])
 
   const textEnter = (gifVariant: string) => {
     setCursorVariant("visible")
@@ -22,6 +33,11 @@ export const Contact = () => {
   }
   const textLeave = () => {
     setCursorVariant("hidden")
+  }
+
+  const handleCopyEmail = () => {
+    copyEmail("sanabarilide@gmail.com")
+    setCopyClicked(true)
   }
 
   return (
@@ -58,6 +74,14 @@ export const Contact = () => {
                   </p>
                 </motion.div>
               </Link>
+              <motion.button
+                onClick={handleCopyEmail}
+                className="border-solid rounded-xl border-2 text-md sm:text-lg"
+                whileHover={{ backgroundColor: "#a3b899" }}
+                whileTap={{ backgroundColor: "#a3b899" }}
+              >
+                {copyClicked ? "Copied!" : "Copy"}
+              </motion.button>
             </div>
             <div className="flex flex-col justify-center">
               <p>Other:</p>
