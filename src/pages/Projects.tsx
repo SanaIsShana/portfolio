@@ -21,7 +21,7 @@ export const Projects = () => {
       >
         {projects.map((project, index) => (
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 w-3/5 gap-2"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-4/5 gap-2"
             key={index}
           >
             <div className="w-fit grid grid-col justify-self-center content-middle">

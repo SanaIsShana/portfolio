@@ -26,7 +26,7 @@ export const HomePage = () => {
             onMouseEnter={() => setCursorVariant("text")}
             onMouseLeave={() => setCursorVariant("default")}
           >
-            <TextAnimation text={"Shana Shana"} />
+            <TextAnimation text={"Sana Barilide"} />
           </div>
           <p
             className="w-fit text-xs sm:text-xl align-start p-2 sm:p-4"

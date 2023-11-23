@@ -14,7 +14,7 @@ export const App = () => {
   return (
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <BrowserRouter basename="/portfolio">
+        <BrowserRouter>
           <AnimatedRoutes />
         </BrowserRouter>
       </ThemeContext.Provider>

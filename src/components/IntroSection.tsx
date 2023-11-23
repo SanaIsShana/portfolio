@@ -6,8 +6,8 @@ export const Intro = () => {
     <div className="m-2 sm:m-3 p-1 sm:p-2 w-fit sm:w-2/5 text-center">
       <div className="text-sm md:text-base lg:text-lg">
         <p>
-          My name is Shana Shana. I am a frontend developer. I love programming
-          because I like to solve problems and be creative.
+          My name is Sana Barilide. I am a frontend developer. I love
+          programming because I like to solve problems and be creative.
         </p>
       </div>
 
