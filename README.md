@@ -9,11 +9,13 @@ I enjoy the process of designing and coding this project.
 
 ### Home Page Design
 - Dark mode
-<img width="1437" alt="p-1" src="https://github.com/SanaIsShana/portfolio/assets/72435416/e486164d-36f9-447a-b730-f43438c661f0">
+<img width="1438" alt="Screenshot 2023-11-17 at 22 10 47" src="https://github.com/SanaIsShana/portfolio/assets/72435416/3c9c1fec-d708-4fe2-bc62-4cc52d81c0b3">
+
 
 
 - Light mode
-<img width="1435" alt="p-2" src="https://github.com/SanaIsShana/portfolio/assets/72435416/85a872a8-0a3c-4429-a08d-57c500dfaf69">
+<img width="1439" alt="Screenshot 2023-11-17 at 22 11 17" src="https://github.com/SanaIsShana/portfolio/assets/72435416/2fdbf5aa-7de0-4026-8b07-3e50467e7a2c">
+
 
 
 ## Table of Contents
