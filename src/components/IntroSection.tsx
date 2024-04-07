@@ -14,7 +14,7 @@ export const Intro = () => {
       <div className="text-sm md:text-base lg:text-lg mt-4">
         <p>
           When I'm not coding, I like to hang out with my friends and play board
-          games! I also love dancing, cooking, art, and design!
+          games. I also love dancing, cooking, art, and design 😃
         </p>
       </div>
       <div className="mt-2">
