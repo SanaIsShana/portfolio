@@ -8,20 +8,17 @@ export const navMenuItems: Array<string> = [
 ]
 
 export const skillsList: Array<string> = [
-  "Typescript",
   "Javascript",
+  "Typescript",
   "Java",
   "React",
-  "Angular",
   "HTML",
   "CSS",
   "Node.js",
-  "GraphQL",
   "Bootstrap",
-  "Tailwind",
+  "TailwindCSS",
   "SQL",
   "MongoDB",
-  "Figma",
   "Git",
 ]
 
@@ -50,7 +47,7 @@ export const projects: Array<Project> = [
     techList: [
       "Typescript",
       "React",
-      "Tailwind",
+      "TailwindCSS",
       "HTML",
       "CSS",
       "Framer Motion",
@@ -60,11 +57,18 @@ export const projects: Array<Project> = [
 
 export const experiences: Array<Experience> = [
   {
+    time: "March - Current, 2024",
+    title: "Frontend Developer (Intern)",
+    company: "E.ON Sverige",
+    link: "https://www.eon.se/",
+    tech: "Javascript, React, HTML, CSS, Vite, Git, Gitlab",
+  },
+  {
     time: "June - August, 2023",
     title: "Frontend Developer (Summer Worker)",
     company: "Axis Communications",
     link: "https://www.axis.com/",
-    tech: "Typescript, React, GraphQL, Styled-components, CSS, HTML, Git",
+    tech: "Typescript, React, GraphQL, Styled-components, HTML, CSS, Git",
   },
   {
     time: "January - May, 2023",

@@ -22,14 +22,14 @@ export const HomePage = () => {
       >
         <div className="flex flex-col text-6xl sm:text-8xl align-start w-fit p-2 sm:p-4">
           <div
-            className="w-fit"
+            className="w-fit cursor-none"
             onMouseEnter={() => setCursorVariant("text")}
             onMouseLeave={() => setCursorVariant("default")}
           >
             <TextAnimation text={"Sana Barilide"} />
           </div>
           <p
-            className="w-fit text-xs sm:text-xl align-start p-2 sm:p-4"
+            className="w-fit text-xs sm:text-xl align-start p-2 sm:p-4 cursor-none"
             onMouseEnter={() => setCursorVariant("text")}
             onMouseLeave={() => setCursorVariant("default")}
           >

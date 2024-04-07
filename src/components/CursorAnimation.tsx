@@ -12,8 +12,8 @@ export const CursorAnimation = ({ cursorVariant }: CursorAnimationProps) => {
 
   const variants: Variants = {
     default: {
-      x: mousePosition.x - 8,
-      y: mousePosition.y - 8,
+      x: mousePosition.x,
+      y: mousePosition.y,
     },
     text: {
       height: 150,
@@ -28,7 +28,7 @@ export const CursorAnimation = ({ cursorVariant }: CursorAnimationProps) => {
   return (
     <motion.div
       ref={ref}
-      className="bg-olive h-16 w-16 rounded-full fixed top-0 left-0 pointer-events-none"
+      className="rounded-full fixed top-0 left-0 pointer-events-none"
       variants={variants}
       animate={cursorVariant}
     />
