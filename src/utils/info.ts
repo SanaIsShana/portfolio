@@ -57,7 +57,14 @@ export const projects: Array<Project> = [
 
 export const experiences: Array<Experience> = [
   {
-    time: "March - Current, 2024",
+    time: "August - Current, 2024",
+    title: "Frontend Developer Consultant (Full-time)",
+    company: "Academic Work",
+    link: "https://www.academicwork.se/",
+    tech: "Javascript, React, HTML, CSS, Vite, Git, Gitlab, .NET, Azure",
+  },
+  {
+    time: "March - June, 2024",
     title: "Frontend Developer (Intern)",
     company: "E.ON Sverige",
     link: "https://www.eon.se/",
