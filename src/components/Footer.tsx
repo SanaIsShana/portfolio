@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <div className="sticky w-full flex flex-row justify-center space-x-2 pb-2">
       <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
-        <a href="//www.linkedin.com/in/shana-shana" target="_blank">
+        <a href="//www.linkedin.com/in/sana-barilide" target="_blank">
           <FaLinkedin size={30} className="cursor-pointer" />
         </a>
       </motion.div>

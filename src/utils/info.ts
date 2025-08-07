@@ -17,6 +17,7 @@ export const skillsList: Array<string> = [
   "Node.js",
   "Bootstrap",
   "TailwindCSS",
+  "GraphQL",
   "SQL",
   "MongoDB",
   "Git",

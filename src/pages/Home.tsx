@@ -34,7 +34,8 @@ export const HomePage = () => {
             onMouseLeave={() => setCursorVariant("default")}
           >
             Hi, I am a frontend developer.
-            <br />I am looking for a new opportunity!
+            <br />
+            Thanks for popping by 😃!
           </p>
         </div>
 
