@@ -54,30 +54,32 @@ export const ExperienceSection = () => {
             >
               {item.tech}
             </div>
+            {index === experiences.length - 1 && (
+              <div className="flex justify-end mt-10 mb-10">
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.75 }}
+                  className={`flex w-fit cursor-pointer items-center ${
+                    theme === "dark" ? "bg-darkOlive" : "bg-olive"
+                  } gap-1 p-1 rounded-lg`}
+                  onClick={onResumeClick}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <span className="font-header"> Check my full resume!</span>
+                  <motion.span
+                    animate={isHovered ? "hovered" : "default"}
+                    variants={buttonIcon}
+                  >
+                    <AiFillSmile size={30} />
+                  </motion.span>
+                </motion.button>
+              </div>
+            )}
           </div>
         ))}
       </div>
 
-      <div className="flex justify-end align-baseline">
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.75 }}
-          className={`flex w-fit cursor-pointer items-center ${
-            theme === "dark" ? "bg-darkOlive" : "bg-olive"
-          } gap-1 p-1 rounded-lg mt-3`}
-          onClick={onResumeClick}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <span className="font-header"> Check my full resume!</span>
-          <motion.span
-            animate={isHovered ? "hovered" : "default"}
-            variants={buttonIcon}
-          >
-            <AiFillSmile size={30} />
-          </motion.span>
-        </motion.button>
-      </div>
       <LinkAnimation
         mousePosition={mousePosition}
         cursorVariant={cursorVariant}
